@@ -1,0 +1,1192 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html{
+    background: #6f86b4;
+    background: -moz-linear-gradient(top,  #4683af 10%, #819ab8 50%, #4683af 90%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#4683af), color-stop(50%,#819ab8), color-stop(90%,#4683af));
+    background: -webkit-linear-gradient(top,  #4683af 10%, #819ab8 50%, #4683af 90%);
+    background: -o-linear-gradient(top,  #4683af 10%, #819ab8 50%, #4683af 90%);
+    background: -ms-linear-gradient(top,  #4683af 10%, #819ab8 50%, #4683af 90%);
+    background: linear-gradient(to bottom,  #4683af 10%, #819ab8 50%, #4683af 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6f86b4', endColorstr='#4683af',GradientType=0 );
+    min-height: 100%;
+}
+html, body {
+    /*temp fix*/
+    min-width: 960px;
+    /*temp fix*/
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+}
+input[type="text"]{
+    font-family: 'Open Sans', sans-serif;
+}
+.half {
+    width: 48%;
+    float: left;
+    margin-left: 4%;
+}
+.third {
+    width: 32%;
+    float: left;
+    margin-left:3%;
+}
+    .clearfix .half:first-child, .clearfix .third:first-child {
+        margin-left: 0;
+    }
+
+.pageHeader {
+    background: #548cb5;
+    padding: 4px 0 6px;
+    position: relative;
+    height: 38px;
+    z-index: 100;
+}
+    .pageHeaderWrapper {
+        background: #ffffff;
+        height: 38px;
+        line-height: 38px;
+        padding: 0 28px 0 15px;
+    }
+        .logo {
+            float: left;
+            position: relative;
+            top: -2px;
+        }
+        .headerClient {
+            float: right;
+        }
+            .headerClientLogin {
+                position: relative;
+                top:4px;
+                display: block;
+                height:27px;
+                line-height: 28px;
+                padding: 0 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color:#fff;
+                font-size: 11px;
+                text-transform: uppercase;
+                text-decoration: none;
+                border-radius: 5px;
+                background: #4884b0;
+                background: -moz-linear-gradient(top,  #4884b0 10%, #609ac3 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#4884b0), color-stop(100%,#609ac3));
+                background: -webkit-linear-gradient(top,  #4884b0 10%,#609ac3 100%);
+                background: -o-linear-gradient(top,  #4884b0 10%,#609ac3 100%);
+                background: -ms-linear-gradient(top,  #4884b0 10%,#609ac3 100%);
+                background: linear-gradient(to bottom,  #4884b0 10%,#609ac3 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4884b0', endColorstr='#609ac3',GradientType=0 );
+                box-shadow: 0 1px 1px rgba(0, 0, 0, .60);
+            }
+.searchBlock {
+    height: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+}
+    .searchMap {
+        width: 40%;
+        float: left;
+        background: #558db6;
+        border-radius: 0 0 5px 0;
+        padding: 0 6px 6px 0;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-top: 48px;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        height: 500px;
+    }
+        .searchMapConteiner {
+            height: 100%;
+            background: #ffffff;
+            position: relative;
+        }
+            .searchMapFilter {
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                z-index: 1;
+                background: rgba(255, 255, 255, .75);
+            }
+                .searchMapFilterWrapper {
+                    margin: 27px 10px;
+                    height: 37px;
+                }
+                    .searchMapSelect {
+                        position: relative;
+                        float: left;
+                        margin-left: 1.5%;
+                        width: 36%;
+                        font-size: 20px;
+                        min-height: 1em;
+                    }
+                        .searchMapSelectBlock{
+                            border: 2px solid #ffffff;
+                            border-radius: 5px; box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                            background: rgba(255, 255, 255, 0.75);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                        }
+                        .searchMapSelect.active{
+
+                        }
+                        .searchMapFilterWrapper .searchMapSelect:first-child{
+                            margin-left: 0;
+                        }
+                        .searchMapSelect span {
+                            cursor: pointer;
+                            display: block;
+                            width: 100%;
+                            overflow: hidden;
+                            height: 33px;
+                            line-height: 32px;
+                            padding: 0 40px 0 10px;
+                            overflow: hidden;
+                            white-space:nowrap;
+                            text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            -webkit-box-sizing: border-box;
+                        }
+                            .searchMapSelect span:after {
+                                content: "";
+                                display: block;
+                                width: 35px;
+                                height: 33px;
+                                border-radius: 0 1px 1px 0;
+                                position: absolute;
+                                top:0;
+                                right: 0;
+                                background: url("../img/arrow-updown.png") no-repeat center 11px transparent;
+                            }
+                        .searchMapSelect ul {
+                            margin: 2px;
+                            padding: 0;
+                            list-style: none;
+                            color:#000;
+                            font-size: 14px;
+                            display: none;
+                        }
+                        .searchMapSelect.active ul {
+                            display: block;
+                        }
+                            .searchMapSelect li {
+                                padding: 2px;
+                                overflow: hidden;
+                                cursor: pointer;
+                                white-space:nowrap;
+                                text-overflow: ellipsis;
+                                -o-text-overflow: ellipsis;
+                            }
+                                .searchMapSelect li:hover {
+                                    background: #3875D7;
+                                    color:#ffffff;
+                                }
+                    .green .searchMapSelectBlock {
+                        border-color: #7ebe88;
+                        color:#7ebe88;
+                    }
+                        .searchMapSelect.green span:after {
+                            background-color: #7ebe88;
+                        }
+                        .active.green.searchMapSelect span:after {
+                            background: url("../img/arrow-updown-green.png") no-repeat center -26px transparent;
+                        }
+                    .blue .searchMapSelectBlock {
+                        border-color: #49a1e4;
+                        color:#49a1e4;
+                    }
+                        .searchMapSelect.blue span:after {
+                            background-color: #49a1e4;
+                        }
+                        .active.blue.searchMapSelect span:after {
+                            background: url("../img/arrow-updown-light-blue.png") no-repeat center -26px transparent;
+                        }
+                    .purple.searchMapSelect {
+                        width: 25%;
+                    }
+                        .purple .searchMapSelectBlock{
+                            border-color: #8b19c6;
+                            color:#8b19c6;
+                        }
+                        .searchMapSelect.purple span:after {
+                            background-color: #8b19c6;
+                        }
+                        .active.purple.searchMapSelect span:after {
+                            background: url("../img/arrow-updown-purple.png") no-repeat center -26px transparent;
+                        }
+    .searchResult {
+        width: 59%;
+        float: right;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding:0;
+        position: relative;
+        margin-top: 48px;
+        overflow: hidden;
+        height: 500px;
+    }
+    .searchResultWrapper {
+        height: 100%;
+        overflow-y: scroll;
+        width: 100%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+        .searchResultWrapper > div{
+            padding-right: 1%;
+        }
+        .searchResultSlider {
+            margin: 27px 0;
+        }
+            .searchResultSlider label {
+                text-align: center;
+                color:#ffffff;
+                font-size: 24px;
+                display: block;
+            }
+            .searchResultSlider .ui-slider {
+                margin-top: 23px;
+            }
+            .searchResultSliderValue {
+                color: #FFFFFF;
+                left: 0;
+                margin-left: -20px;
+                position: absolute;
+                text-align: center;
+                text-decoration: none;
+                top: 33px;
+                width: 50px;
+            }
+        .searchResultDatepicker {
+            margin-top: 27px;
+            max-width: 246px;
+        }
+            .clearfix .half:first-child .searchResultDatepicker{
+                float:right;
+            }
+            .searchResultDatepicker label {
+                float:left;
+                color:#ffffff;
+                font-size: 24px;
+                display: block;
+                width: 40px;
+            }
+            .searchResultDatepickerWrapper {
+                margin-left: 45px;
+                border: 2px solid #ffffff;
+                border-radius: 5px;
+                position: relative;
+                height: 38px;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+                .searchResultDatepickerWrapper input[type="text"] {
+                    background: transparent;
+                    border:none;
+                    outline: none;
+                    color:#fff;
+                    text-align: center;
+                    height: 34px;
+                    padding: 0 37px 0 0;
+                    font-size: 24px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                }
+                .searchResultDatepickerWrapper:before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top:-1px;
+                    right:-1px;
+                    width: 38px;
+                    height: 36px;
+                    background: url(../img/datepicker.png) no-repeat 0 0 transparent;
+                }
+        .searchResultOther {
+            color: #ffffff;
+            font-size: 20px;
+            position: relative;
+            margin-bottom: 25px;
+            margin-top: 48px;
+            z-index: 20;
+        }
+        .stick .searchResultOther{
+            left: 0;
+            top:0;
+            margin: 0;
+            position: absolute;
+            z-index: 30;
+            width: 100%;
+            height: 32px;
+            background: rgba(255, 255, 255, .75);
+            color:#4E7AA8;
+            padding-left: 15px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+            .searchResultOther:before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom:1px solid #ffffff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, .75);
+            }
+                .stick .searchResultOther:before {
+                    display: none;
+                }
+                .active.searchResultOther:before{
+                    display: none;
+                }
+                .searchResultOther > span{cursor: pointer}
+                .searchResultOther > span:after {
+                    content: '';
+                    display: inline-block;
+                    background: url("../img/arrow-updown.png") no-repeat 0 0 transparent;
+                    height: 11px;
+                    margin-left: 10px;
+                    width: 23px;
+                }
+                    .active.searchResultOther > span:after {
+                        background-position: 0 bottom;
+                    }
+                    .stick .searchResultOther > span:after{
+                        background: url("../img/arrow-updown-blue.png") no-repeat 0 0 transparent;
+                    }
+                    .stick .active.searchResultOther > span:after{
+                        background: url("../img/arrow-updown-blue.png") no-repeat 0 bottom transparent;
+                    }
+            .searchResultOtherFilter {
+                display: none;
+                background: rgba(255, 255, 255, .75);
+                padding: 15px;
+                position: absolute;
+                left: 0;
+                top: 32px;
+                width: 100%;
+                box-shadow: 0 4px 4px rgba(0, 0, 0, .4);
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+                .active .searchResultOtherFilter{
+                    display: block;
+                }
+            .searchResultOtherFilterCheck input[type=checkbox] {
+                position: absolute;
+                left: -10000px;
+            }
+            .searchResultOtherFilterCheck {
+                font-size: 18px;
+                color:#4e7aa8;
+                padding-left: 5px;
+                margin: 5px 0;
+                cursor: pointer;
+                position: relative;
+            }
+            .searchResultOtherFilterCheck:before {
+                content: '';
+                display: inline-block;
+                margin-right: 10px;
+                background: url("../img/checkbox.png") no-repeat 0 bottom transparent;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 3px;
+            }
+            .searchResultOtherFilterCheck.active:before {
+                background: url("../img/checkbox.png") no-repeat 0 0 transparent;
+            }
+
+        .searchResultItem {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding: 15px 20px;
+            background: #91adc9;
+            border-radius: 3px;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+            .searchResultItemImg {
+                width: 54%;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                border-radius: 5px;
+            }
+                .searchResultItemImg img{
+                    width: 100%;
+                    border-radius: 6px;
+                }
+                .searchResultItemRating {
+                    background: rgba(0,0,0,.50);
+                    width: 100%;
+                    border-radius: 0 0 5px 5px;
+                    position: absolute;
+                    z-index: 20;
+                    left: 0;
+                    bottom: 0;
+                }
+                .slidesjs-navigation {
+                    position: absolute;
+                    top:0;
+                    z-index: 21;
+                    background-image: url(../img/slider-arrows.png);
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
+                    text-indent: -9999px;
+                    width: 20px;
+                    height: 100%;
+                }
+                .slidesjs-previous {
+                    left:0;
+                    background-position: -27px center;
+                }
+                .slidesjs-next {
+                    right: 0;
+                    background-position: 0 center;
+                }
+                    .searchResultItemRatingStars {
+                        margin:5px 0;
+                        padding:0;
+                        list-style: none;
+                        text-align: center;
+                    }
+                        .searchResultItemRatingStars li {
+                            display: inline-block;
+                            width: 34px;
+                            height: 34px;
+                            margin: 0 3px;
+                            background: url(../img/rating-stars.png) no-repeat 0 0 transparent;
+                        }
+                        .searchResultItemRatingStars li.active {
+                            background-position: 0 bottom;
+                        }
+            .searchResultItemDescr {
+                width: 40%;
+                float: right;
+            }
+                .searchResultItemName {
+                    font-size: 30px;
+                    color: #ffffff;
+                    line-height: 1;
+                }
+                .searchResultItemAdress {
+                    font-size: 15px;
+                    color: #ffffff;
+                    margin: 3px 0 10px;
+                }
+                .searchResultItemRoomWrapper {
+                    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.5)));
+                }
+                .searchResultItemRoom {
+                    font-size: 18px;
+                    color:#b2fbbe;
+                    border-bottom: 1px dashed #b2fbbe;
+                    margin: 8px 0 0;
+                }
+                    .searchResultItemRoomSize {
+                        float: left;
+                    }
+                    .searchResultItemRoomPrice {
+                        float: right;
+                    }
+
+.loadBlock {
+    margin: 10px auto;
+}
+
+.contentBlock {
+    width: 1000px;
+    margin:0 auto;
+}
+
+/*calendar*/
+/*!
+ * FullCalendar v2.0.0-beta2 Stylesheet
+ * Docs & License: http://arshaw.com/fullcalendar/
+ * (c) 2013 Adam Shaw
+ */
+
+
+.fc {
+    direction: ltr;
+    text-align: left;
+    width: 840px;
+}
+
+.fc table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html .fc,
+.fc table {
+    font-size: 1em;
+}
+
+.fc td,
+.fc th {
+    padding: 0;
+    vertical-align: top;
+}
+
+
+
+/* Header
+------------------------------------------------------------------------*/
+
+.fc-header td {
+    white-space: nowrap;
+}
+
+.fc-header-left {
+    width: 25%;
+    text-align: left;
+}
+
+.fc-header-center {
+    text-align: center;
+}
+
+.fc-header-right {
+    width: 25%;
+    text-align: right;
+}
+
+.fc-header-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fc-header-title h2 {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.fc .fc-header-space {
+    padding-left: 10px;
+}
+
+
+
+/* Content
+------------------------------------------------------------------------*/
+
+.fc-content {
+    position: relative;
+    z-index: 1; /* scopes all other z-index's to be inside this container */
+    clear: both;
+    zoom: 1; /* for IE7, gives accurate coordinates for [un]freezeContentHeight */
+}
+
+.fc-view {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+/* Cell Styles
+------------------------------------------------------------------------*/
+
+.fc-widget-header,    /* <th>, usually */
+.fc-widget-content {  /* <td>, usually */
+    border: 1px solid #ddd;
+}
+
+.fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
+    background: #fcf8e3;
+}
+
+.fc-cell-overlay { /* semi-transparent rectangle while dragging */
+    background: #bce8f1;
+    /*opacity: .3;
+    filter: alpha(opacity=30);*/ /* for IE */
+    opacity: 0;
+    filter: alpha(opacity=0); /* for IE */
+    display: none;
+}
+
+/* Global Event Styles
+------------------------------------------------------------------------*/
+
+.fc-event-container > * {
+    z-index: 8;
+}
+
+.fc-event-container > .ui-draggable-dragging,
+.fc-event-container > .ui-resizable-resizing {
+    z-index: 9;
+}
+
+.fc-event {
+    color: #fff;               /* default TEXT color */
+    font-size: 30px;
+    cursor: default;
+    text-align: center;
+}
+
+a.fc-event {
+    text-decoration: none;
+}
+
+a.fc-event,
+.fc-event-draggable {
+    cursor: pointer;
+}
+
+.fc-rtl .fc-event {
+    text-align: right;
+}
+
+.fc-event-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fc-event-time,
+.fc-event-title {
+    padding: 0 1px;
+}
+
+.fc .ui-resizable-handle {
+    display: block;
+    position: absolute;
+    z-index: 99999;
+    overflow: hidden; /* hacky spaces (IE6/7) */
+    font-size: 300%;  /* */
+    line-height: 50%; /* */
+}
+
+
+
+/* Horizontal Events
+------------------------------------------------------------------------*/
+
+.fc-event-hori {
+    border-width: 1px 0;
+    margin-bottom: 1px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-start,
+.fc-rtl .fc-event-hori.fc-event-end {
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+    border-right-width: 1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+/* resizable */
+
+.fc-event-hori .ui-resizable-e {
+    top: 0           !important; /* importants override pre jquery ui 1.7 styles */
+    right: -3px      !important;
+    width: 7px       !important;
+    height: 100%     !important;
+    cursor: e-resize;
+}
+
+.fc-event-hori .ui-resizable-w {
+    top: 0           !important;
+    left: -3px       !important;
+    width: 7px       !important;
+    height: 100%     !important;
+    cursor: w-resize;
+}
+
+.fc-event-hori .ui-resizable-handle {
+    _padding-bottom: 14px; /* IE6 had 0 height */
+}
+
+
+
+/* Reusable Separate-border Table
+------------------------------------------------------------*/
+
+table.fc-border-separate {
+    border-collapse: separate;
+}
+
+.fc-border-separate th,
+.fc-border-separate td {
+    border-width: 1px 0 0 1px;
+}
+
+.fc-border-separate th.fc-last,
+.fc-border-separate td.fc-last {
+    border-right-width: 1px;
+}
+
+.fc-border-separate tr.fc-last th,
+.fc-border-separate tr.fc-last td {
+    border-bottom-width: 1px;
+}
+
+.fc-border-separate tbody tr.fc-first td,
+.fc-border-separate tbody tr.fc-first th {
+    border-top-width: 0;
+}
+
+table.fc-border-separate thead{
+    background: #e3ecf3;
+    color: #4e7aa8;
+}
+table.fc-border-separate thead th{
+    border-color: #e3ecf3;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+
+/* Month View, Basic Week View, Basic Day View
+------------------------------------------------------------------------*/
+
+.fc-grid th {
+    text-align: center;
+}
+
+.fc .fc-week-number {
+    width: 22px;
+    text-align: center;
+}
+
+.fc .fc-week-number div {
+    padding: 0 2px;
+}
+
+/*.fc-grid .fc-day-number {
+    float: right;
+    padding: 0 2px;
+}*/
+
+.fc-grid .fc-other-month .fc-day-number {
+    /*opacity: 0.3;
+    filter: alpha(opacity=30);*/ /* for IE */
+    /* opacity with small font can sometimes look too faded
+       might want to set the 'color' property instead
+       making day-numbers bold also fixes the problem */
+}
+
+/*.fc-grid .fc-day-content {
+    clear: both;
+    padding: 30px 0 0;
+    font-size: 30px;
+    color:#ffffff;
+    text-align: center;
+}*/
+
+/* event styles */
+
+.fc-grid .fc-event-time {
+    font-weight: bold;
+}
+
+/* right-to-left */
+
+.fc-rtl .fc-grid .fc-day-number {
+    float: left;
+}
+
+.fc-rtl .fc-grid .fc-event-time {
+    float: right;
+}
+
+
+
+/* Agenda Week View, Agenda Day View
+------------------------------------------------------------------------*/
+
+.fc-agenda table {
+    border-collapse: separate;
+}
+
+.fc-agenda-days th {
+    text-align: center;
+}
+
+.fc-agenda .fc-agenda-axis {
+    width: 50px;
+    padding: 0 4px;
+    vertical-align: middle;
+    text-align: right;
+    font-weight: normal;
+}
+
+.fc-agenda-slots .fc-agenda-axis {
+    white-space: nowrap;
+}
+
+.fc-agenda .fc-week-number {
+    font-weight: bold;
+}
+
+.fc-agenda .fc-day-content {
+    padding: 2px 2px 1px;
+}
+
+/* make axis border take precedence */
+
+.fc-agenda-days .fc-agenda-axis {
+    border-right-width: 1px;
+}
+
+.fc-agenda-days .fc-col0 {
+    border-left-width: 0;
+}
+
+/* all-day area */
+
+.fc-agenda-allday th {
+    border-width: 0 1px;
+}
+
+.fc-agenda-allday .fc-day-content {
+    min-height: 34px; /* TODO: doesnt work well in quirksmode */
+    _height: 34px;
+}
+
+/* divider (between all-day and slots) */
+
+.fc-agenda-divider-inner {
+    height: 2px;
+    overflow: hidden;
+}
+
+.fc-widget-header .fc-agenda-divider-inner {
+    background: #eee;
+}
+
+/* slot rows */
+
+.fc-agenda-slots th {
+    border-width: 1px 1px 0;
+}
+
+.fc-agenda-slots td {
+    border-width: 1px 0 0;
+    background: none;
+}
+
+.fc-agenda-slots td div {
+    height: 20px;
+}
+
+.fc-agenda-slots tr.fc-slot0 th,
+.fc-agenda-slots tr.fc-slot0 td {
+    border-top-width: 0;
+}
+
+.fc-agenda-slots tr.fc-minor th,
+.fc-agenda-slots tr.fc-minor td {
+    border-top-style: dotted;
+}
+
+.fc-agenda-slots tr.fc-minor th.ui-widget-header {
+    *border-top-style: solid; /* doesn't work with background in IE6/7 */
+}
+
+
+
+/* Vertical Events
+------------------------------------------------------------------------*/
+
+.fc-event-vert {
+    border-width: 0 1px;
+}
+
+.fc-event-vert.fc-event-start {
+    border-top-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.fc-event-vert.fc-event-end {
+    border-bottom-width: 1px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.fc-event-vert .fc-event-time {
+    white-space: nowrap;
+    font-size: 10px;
+}
+
+.fc-event-vert .fc-event-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.fc-event-vert .fc-event-bg { /* makes the event lighter w/ a semi-transparent overlay  */
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: .25;
+    filter: alpha(opacity=25);
+}
+
+.fc .ui-draggable-dragging .fc-event-bg, /* TODO: something nicer like .fc-opacity */
+.fc-select-helper .fc-event-bg {
+    display: none\9; /* for IE6/7/8. nested opacity filters while dragging don't work */
+}
+
+/* resizable */
+
+.fc-event-vert .ui-resizable-s {
+    bottom: 0        !important; /* importants override pre jquery ui 1.7 styles */
+    width: 100%      !important;
+    height: 8px      !important;
+    overflow: hidden !important;
+    line-height: 8px !important;
+    font-size: 11px  !important;
+    font-family: monospace;
+    text-align: center;
+    cursor: s-resize;
+}
+
+.fc-agenda .ui-resizable-resizing { /* TODO: better selector */
+    _overflow: hidden;
+}
+
+.fc-day {
+    color:#ffffff;
+    font-size: 30px;
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+/*.fc-grid .fc-day-number {
+    float: none;
+    height: 77px;
+    text-align: right;
+    width: 100%;
+}*/
+/*.fc-grid .fc-day-content {
+    padding:0;
+}*/
+.fc-cell-overlay {
+    display: none !important;
+}
+.fc-event-container {
+    display: none !important;
+}
+.startFix {
+
+}
+.endFix > div{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+    .endFix > div:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 0;
+        height: 0;
+        border-top: 80px solid #eaeffa;
+        border-right: 80px solid transparent;
+    }
+
+/*.dateFix {
+    color:#4e7aa8;
+    background: #eaeffa;
+}*/
+.dateFix .fc-day-content {
+    color:#4e7aa8;
+}
+
+
+
+.fc-day {
+    border-left:1px solid #fff;
+    border-bottom:1px solid #fff;
+    width: 14.2857142857%;
+    padding: 0;
+    font-size:30px;
+    color:#ffffff;
+    line-height: 1;
+}
+.fc-day-wrapper {
+    padding:0;
+    position: relative;
+}
+.fc-day-number {
+    text-align: right;
+    padding-top: 10px;
+}
+.fc-day-number span {
+    margin: 0 10px 0 0;
+}
+.fc-day-content {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom:10px;
+    text-align: center;
+}
+.dateFix .fc-day-wrapper{
+    background: url(../img/fullcalendar-bg.png) no-repeat center center #eaeffa;
+    color:#4E7AA8;
+}
+.startFix .fc-day-wrapper{
+    background: url(../img/fullcalendar-bg.png) no-repeat right top transparent;
+}
+.endFix .fc-day-wrapper{
+    background: url(../img/fullcalendar-bg.png) no-repeat right -530px transparent;
+}

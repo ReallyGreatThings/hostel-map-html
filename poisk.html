@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="pageHeader">
+    <div class="pageHeaderWrapper clearfix">
+        <div class="logo">
+            <a href="/"><img src="img/logo.png" alt="" width="132" height="27"/></a>
+        </div>
+        <div class="headerClient">
+            <a href="#" class="headerClientLogin">Войти</a>
+        </div>
+    </div>
+</header>
+<section class="searchBlock clearfix">
+    <div class="searchMap">
+        <div class="searchMapConteiner" id="YMaps">
+            <div class="searchMapFilter">
+                <div class="searchMapFilterWrapper clearfix">
+                    <div class="searchMapSelect green">
+                        <div class="searchMapSelectBlock">
+                            <span>Метро</span>
+                            <ul>
+                                <li data-value="Метро">Метро</li>
+                                <li data-value="Василеостровская">Василеостровская</li>
+                                <li data-value="Приморская">Приморская</li>
+                            </ul>
+                            <input type="hidden" name="filter1" value=""/>
+                        </div>
+                    </div>
+                    <div class="searchMapSelect blue">
+                        <div class="searchMapSelectBlock">
+                            <span>Достопримечательности</span>
+                            <ul>
+                                <li data-value="Достопримечательности">Достопримечательности</li>
+                                <li data-value="Василеостровская">Василеостровская</li>
+                                <li data-value="Приморская">Приморская</li>
+                            </ul>
+                            <input type="hidden" name="filter2" value=""/>
+                        </div>
+                    </div>
+                    <div class="searchMapSelect purple">
+                        <div class="searchMapSelectBlock">
+                            <span>ВУЗы</span>
+                            <ul>
+                                <li data-value="ВУЗы">ВУЗы</li>
+                                <li data-value="Василеостровская">Василеостровская</li>
+                                <li data-value="Приморская">Приморская</li>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="filter3" value=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="searchResult">
+        <div class="searchResultWrapper" id="searchResultWrapper">
+            <div class="clearfix">
+                <div class="half">
+                    <div class="searchResultDatepicker clearfix">
+                        <label>От</label>
+                        <div class="searchResultDatepickerWrapper">
+                            <input type="text" id="dateMin">
+                        </div>
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="searchResultDatepicker clearfix">
+                        <label>До</label>
+                        <div class="searchResultDatepickerWrapper">
+                            <input type="text" id="dateMax">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="half">
+                    <div class="searchResultSlider">
+                        <label>Цена</label>
+                        <input type="hidden" id="price">
+                        <div id="slider-price"></div>
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="searchResultSlider">
+                        <label>Количество человек</label>
+                        <input type="hidden" id="count">
+                        <div id="slider-count"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <div class="searchResultOther">
+                <span>Другие услуги</span>
+                <div class="searchResultOtherFilter clearfix">
+                    <div class="third">
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter1">Парковка
+                            <input id="filter1" type="checkbox" value="Парковка" />
+                            </label>
+                        </div>
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter2">Wi-Fi
+                            <input type="checkbox" id="filter2" value="Wi-Fi" />
+                            </label>
+                        </div>
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter3">Кухня
+                            <input type="checkbox" id="filter3" value="Кухня" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="third">
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter4">С животными
+                            <input type="checkbox" id="filter4" value="С животными" />
+                            </label>
+                        </div>
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter5">Душевые
+                            <input type="checkbox" id="filter5" value="Душевые" />
+                            </label>
+                        </div>
+                        <div class="searchResultOtherFilterCheck">
+                            <label for="filter6">Стриптиз
+                            <input type="checkbox" id="filter6" value="Стриптиз" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div>
+            <div class="searchResultItem clearfix" data-url="index.html">
+                <div class="searchResultItemImg">
+                    <div class="searchResultItemSlides">
+                        <img src="images/img1.jpg" alt="" title="1"/>
+                        <img src="images/img1.jpg" alt="" title="2"/>
+                        <img src="images/img1.jpg" alt="" title="3"/>
+                        <img src="images/img1.jpg" alt="" title="4"/>
+                    </div>
+                    <div class="searchResultItemRating" data-rating="3"></div>
+                </div>
+                <div class="searchResultItemDescr">
+                    <div class="searchResultItemName">Локейшен хостел</div>
+                    <div class="searchResultItemAdress">Невский проспект, 107</div>
+                    <div class="searchResultItemRoomWrapper">
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Двухместный</div>
+                            <div class="searchResultItemRoomPrice">1600 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Трехместный</div>
+                            <div class="searchResultItemRoomPrice">1200 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Четырехместный</div>
+                            <div class="searchResultItemRoomPrice">800 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Пятиместный</div>
+                            <div class="searchResultItemRoomPrice">650 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Шестиместный</div>
+                            <div class="searchResultItemRoomPrice">500 p.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchResultItem clearfix" data-url="index.html">
+                <div class="searchResultItemImg">
+                    <div class="searchResultItemSlides">
+                        <img src="images/img1.jpg" alt="" title="1"/>
+                        <img src="images/img1.jpg" alt="" title="2"/>
+                        <img src="images/img1.jpg" alt="" title="3"/>
+                        <img src="images/img1.jpg" alt="" title="4"/>
+                    </div>
+                    <div class="searchResultItemRating" data-rating="4"></div>
+                </div>
+                <div class="searchResultItemDescr">
+                    <div class="searchResultItemName">Локейшен хостел</div>
+                    <div class="searchResultItemAdress">Невский проспект, 107</div>
+                    <div class="searchResultItemRoomWrapper">
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Двухместный</div>
+                            <div class="searchResultItemRoomPrice">1600 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Трехместный</div>
+                            <div class="searchResultItemRoomPrice">1200 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Четырехместный</div>
+                            <div class="searchResultItemRoomPrice">800 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Пятиместный</div>
+                            <div class="searchResultItemRoomPrice">650 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Шестиместный</div>
+                            <div class="searchResultItemRoomPrice">500 p.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="searchResultItem clearfix" data-url="index.html">
+                <div class="searchResultItemImg">
+                    <div class="searchResultItemSlides">
+                        <img src="images/img1.jpg" alt="" title="1"/>
+                        <img src="images/img1.jpg" alt="" title="2"/>
+                        <img src="images/img1.jpg" alt="" title="3"/>
+                        <img src="images/img1.jpg" alt="" title="4"/>
+                    </div>
+                    <div class="searchResultItemRating" data-rating="2"></div>
+                </div>
+                <div class="searchResultItemDescr">
+                    <div class="searchResultItemName">Локейшен хостел</div>
+                    <div class="searchResultItemAdress">Невский проспект, 107</div>
+                    <div class="searchResultItemRoomWrapper">
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Двухместный</div>
+                            <div class="searchResultItemRoomPrice">1600 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Трехместный</div>
+                            <div class="searchResultItemRoomPrice">1200 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Четырехместный</div>
+                            <div class="searchResultItemRoomPrice">800 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Пятиместный</div>
+                            <div class="searchResultItemRoomPrice">650 p.</div>
+                        </div>
+                        <div class="searchResultItemRoom clearfix">
+                            <div class="searchResultItemRoomSize">Шестиместный</div>
+                            <div class="searchResultItemRoomPrice">500 p.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="searchResultItem clearfix" data-url="index.html">
+                    <div class="searchResultItemImg">
+                        <div class="searchResultItemSlides">
+                            <img src="images/img1.jpg" alt="" title="1"/>
+                            <img src="images/img1.jpg" alt="" title="2"/>
+                            <img src="images/img1.jpg" alt="" title="3"/>
+                            <img src="images/img1.jpg" alt="" title="4"/>
+                        </div>
+                        <div class="searchResultItemRating" data-rating="1"></div>
+                    </div>
+                    <div class="searchResultItemDescr">
+                        <div class="searchResultItemName">Локейшен хостел</div>
+                        <div class="searchResultItemAdress">Невский проспект, 107</div>
+                        <div class="searchResultItemRoomWrapper">
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Двухместный</div>
+                                <div class="searchResultItemRoomPrice">1600 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Трехместный</div>
+                                <div class="searchResultItemRoomPrice">1200 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Четырехместный</div>
+                                <div class="searchResultItemRoomPrice">800 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Пятиместный</div>
+                                <div class="searchResultItemRoomPrice">650 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Шестиместный</div>
+                                <div class="searchResultItemRoomPrice">500 p.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searchResultItem clearfix" data-url="index.html">
+                    <div class="searchResultItemImg">
+                        <div class="searchResultItemSlides">
+                            <img src="images/img1.jpg" alt="" title="1"/>
+                            <img src="images/img1.jpg" alt="" title="2"/>
+                            <img src="images/img1.jpg" alt="" title="3"/>
+                            <img src="images/img1.jpg" alt="" title="4"/>
+                        </div>
+                        <div class="searchResultItemRating" data-rating="5"></div>
+                    </div>
+                    <div class="searchResultItemDescr">
+                        <div class="searchResultItemName">Локейшен хостел</div>
+                        <div class="searchResultItemAdress">Невский проспект, 107</div>
+                        <div class="searchResultItemRoomWrapper">
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Двухместный</div>
+                                <div class="searchResultItemRoomPrice">1600 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Трехместный</div>
+                                <div class="searchResultItemRoomPrice">1200 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Четырехместный</div>
+                                <div class="searchResultItemRoomPrice">800 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Пятиместный</div>
+                                <div class="searchResultItemRoomPrice">650 p.</div>
+                            </div>
+                            <div class="searchResultItemRoom clearfix">
+                                <div class="searchResultItemRoomSize">Шестиместный</div>
+                                <div class="searchResultItemRoomPrice">500 p.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="loaderImage" class="loadBlock"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('YMaps', {
+            center: [55.733835, 37.588227],
+            zoom: 12,
+            controls: []
+        });
+
+        var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+            balloonContentBody: [
+                '<address>',
+                '<strong>Офис Яндекса в Москве</strong>',
+                '<br/>',
+                'Адрес: 119021, Москва, ул. Льва Толстого, 16',
+                '<br/>',
+                'Подробнее: <a href="http://company.yandex.ru/">http://company.yandex.ru/<a>',
+                '</address>'
+            ].join('')
+        }, {
+            preset: 'islands#redDotIcon'
+        });
+        myMap.geoObjects.add(myPlacemark);
+    });
+</script>
+</body>
+</html>

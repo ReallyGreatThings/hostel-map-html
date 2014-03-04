@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+   <!-- <link rel="stylesheet" href="css/jquery-ui.css">-->
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!--<script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>-->
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="pageHeader">
+    <div class="pageHeaderWrapper clearfix">
+        <div class="logo">
+            <a href="/"><img src="img/logo.png" alt="" width="132" height="27"/></a>
+        </div>
+        <div class="headerClient">
+            <a href="#" class="headerClientLogin">Войти</a>
+        </div>
+    </div>
+</header>
+<section class="contentBlock">
+    <div id="calendar"></div>
+    <div id="dialogForm" class="dialogForm" style="display: none;">
+        <div class="dialogFormTitle" id="dialogFormTitle">Дата</div>
+        <form action="#" method="get" id="dialogFormAct">
+            <div class="dialogFormField">
+                <label for="dialogFormPrice">Цена</label>
+                <input type="text" id="dialogFormPrice" value=""/>
+            </div>
+            <div class="clearfix">
+                <button type="reset">Отменить</button>
+                <button type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div>
+</section>
+<script src="js/lib/moment.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/fullcalendar.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        /*$("#calendar").selectable({filter:'td'});
+
+        $("#calendar").on("selectableselected", '.fc-day', function(event, ui) {
+            $("body").append("<h1>did selectablestop</h1>");
+        });*/
+
+        function addZero(i) {
+            return (i < 10)? "0" + i: i;
+        }
+
+
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        var calendar = $('#calendar').fullCalendar({
+            header: {
+                left: 'prev',
+                center: 'title',
+                right: 'next'
+            },
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+            monthNamesShort: ['Янв.','Фев.','Март','Апр.','Май','Июнь','Июль','Авг.','Сент.','Окт.','Ноя.','Дек.'],
+            dayNames: ["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"],
+            dayNamesShort: ["ВС","ПН","ВТ","СР","ЧТ","ПТ","СБ"],
+            buttonText: {
+                prev: "&nbsp;&#9668;&nbsp;",
+                next: "&nbsp;&#9658;&nbsp;",
+                prevYear: "&nbsp;&lt;&lt;&nbsp;",
+                nextYear: "&nbsp;&gt;&gt;&nbsp;",
+                today: "Сегодня",
+                month: "Месяц",
+                week: "Неделя",
+                day: "День"
+            },
+            firstDay: 1,
+            disableDragging: true,
+            selectable: true,
+            height: 805,
+            //selectHelper: true,
+
+            /*eventClick: function(event, jsEvent){
+                //use the passed-in javascript event to get a jQuery-wrapped reference
+                //to the DOM element we clicked on.
+                //i can never remember if this is .target, .currentTarget, or .originalTarget
+                //... jquery has spoiled me
+                var $clickedEvent = $(jsEvent.target);
+
+                //tell the "selectionManager" to find the day this event belongs to,
+                //and add the "selected" css class to it
+                selectionManager.select($clickedEvent);
+            },*/
+            /*dayClick: function(date, jsEvent, view) {
+
+                alert('Clicked on: ' + date.format());
+
+                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+                alert('Current view: ' + view.name);
+
+                // change the day's background color just for fun
+                $(this).css('background-color', 'red');
+
+            },*/
+
+            select: function(startDate, endDate, jsEvent, view){
+
+
+
+                var startDateText = new Date(startDate).getDate();
+                var endDateText = new Date(endDate).getDate()-1;
+                var titleText = startDateText +'.' +m+ '.'+y+' до ' + endDateText+'.' +m+ '.'+y;
+                //$('#dialogFormTitle').text(titleText);
+                //$('#dialogForm').show();
+                //var title = prompt(titleText);
+                var title = '1000p.';
+
+                calendar.fullCalendar('clientEvents', function (event) {
+                    if(startDate <= event.start && endDate > event.start){
+
+                            event.title = title;
+                            calendar.fullCalendar('updateEvent', event);
+
+                            var tempDate = new Date(event.start);
+                            //console.log(tempDate);
+                            var tempDate2 = tempDate.getFullYear() + '-' + addZero(parseInt(tempDate.getMonth()+1)) + '-' + addZero(parseInt(tempDate.getDate()));
+                            //console.log(tempDate2);
+
+                            $('.fc-day').each(function(){
+                                if($(this).data('date') == tempDate2){
+                                    $(this).find('.fc-day-content span').text(title);
+                                }
+                            });
+
+                       // calendar.fullCalendar('unselect');
+                    }
+                });
+            },
+            events: [
+                {
+                    title: '2000р.',
+                    start: new Date(y, m, 1),
+                    allDay: true
+                },
+                {
+                    title: '3000р.',
+                    start: new Date(y, m, 2),
+                    allDay: true
+                },
+                {
+                    title: '4000р.',
+                    start: new Date(y, m, 3),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 4),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 5),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 6),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 7),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 8),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 9),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 10),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 11),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 12),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 13),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 14),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 15),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 16),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 17),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 18),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 19),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 20),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 21),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 22),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 23),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 24),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 25),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 26),
+                    allDay: true
+                },
+                {
+                    title: '1000р.',
+                    start: new Date(y, m, 27),
+                    allDay: true
+                }
+            ],
+            eventTextColor: '#fff',
+            eventBackgroundColor: 'transparent',
+            eventBorderColor: 'transparent'
+        });
+
+    });
+
+    $(document).ready(function () {
+
+        //set cells width and height
+        var rowHeight = $('.fc-day-wrapper').eq(0).width();
+        $('.fc-day-wrapper').height(rowHeight);
+
+        $(window).resize(function(){
+            var rowHeight = $('.fc-day-wrapper').eq(0).width();
+            $('.fc-day-wrapper').height(rowHeight);
+        });
+
+    });
+</script>
+
+</body>
+</html>
