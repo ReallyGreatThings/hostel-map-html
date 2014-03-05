@@ -1286,7 +1286,7 @@ a:hover {
 }
 
 .tabs-navigation-menu li a {
-    font-weight: lighter;
+    font-weight: 100;
     font-size: 16px;
     color: #fff;
     display: block;
@@ -1315,6 +1315,419 @@ a:hover {
     position: relative;
     z-index: 1;
     padding: 30px 40px;
+    color: #fff;
+}
+
+.page-content {
+    padding: 41px 0 0 12px;
+
+}
+
+.page-title {
+    font-size: 35px;
+    line-height: 35px;
+    display: block;
+    font-weight: 100;
+    margin: 0;
+}
+
+.block-title {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    display: block;
+    margin: 0;
+}
+
+.hostel-block .block-title {
+    float: left;
+}
+
+.hostel-block .action-panel {
+    border-bottom: 1px solid #fff;
+    text-align: right;
+}
+
+.actions-links {
+    padding-right: 20px;
+    background-position: right center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+    background-repeat: no-repeat;
+}
+
+.actions-links:hover {
+    text-decoration: none;
+}
+
+.edit-link {
+    background-image: url("../images/edit.png");
+}
+
+.contact-name {
+    margin: 0 0 23px;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 100;
+}
+
+.block-content {
+    padding: 12px 0 0
 }
 
 /* content wrapper style begin */
+
+
+/* kabinet_hostela style begin */
+
+.contacts-block .col-a {
+    width: 477px;
+    float: left;
+}
+
+.contacts-block .col-b {
+    float: left;
+    padding-top: 0;
+}
+
+.contacts-item {
+    margin: 0;
+}
+
+.contacts-item dt {
+    float: left;
+    width: 135px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.contacts-item dd {
+    margin: 0;
+    float: left;
+    margin-bottom: 6px;
+}
+
+.contacts-item .value-field {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.places-block .col-a,
+.places-block .col-b,
+.places-block .col-c {
+    float: left;
+    width: 331px;
+}
+
+.places-block .col-b {
+    margin: 0 32px;
+
+}
+
+.places-block .value-field {
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 5px 10px 5px;
+    font-weight: 100;
+    font-size: 18px;
+    margin-bottom: 21px;
+    position: relative;
+}
+
+.value-field.house-number {
+    float: left;
+    width: 126px;
+}
+
+.value-field.housing-number {
+    float: right;
+    width: 123px;
+}
+
+.metro-fields .value-field {
+    background: url("../images/metro-white.png") 7px center no-repeat;
+    padding-left: 42px;
+    margin-bottom: 11px;
+}
+
+.metro-list li {
+    padding-left: 37px;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    margin: 0 0 14px 10px;
+    font-size: 18px;
+    position: relative;
+    width: 235px;
+}
+
+.metro-list li:last-child {
+    margin-bottom: 0;
+}
+
+.metro-list .green {
+    background-image: url("../images/metro-green.png");
+    color: #abffb9;
+}
+
+.metro-list .pink {
+    background-image: url("../images/metro-pink.png");
+    color: #ffc2bc;
+}
+
+.metro-list .purple-dark {
+    background-image: url("../images/metro-purple-dark.png");
+    color: #debaff;
+}
+
+.metro-list .purple-light {
+    background-image: url("../images/metro-purple-light.png");
+    color: #ceddff;
+}
+
+.metro-list .yellow {
+    background-image: url("../images/metro-yellow.png");
+    color: #ffe8ab;
+}
+
+.attraction-fields .value-field {
+    background: url("../images/attraction.png") 7px center no-repeat;
+    padding-left: 42px;
+    margin-bottom: 11px;
+}
+
+.university-fields .value-field {
+    background: url("../images/university.png") 7px center no-repeat;
+    padding-left: 42px;
+    margin-bottom: 11px;
+}
+
+.places-list {
+    font-weight: 100;
+    font-size: 18px;
+    padding-left: 12px;
+}
+
+.places-list li {
+    margin-bottom: 15px;
+}
+
+.places-list li:last-child {
+    margin-bottom: 0;
+}
+
+.places-block {
+    margin: 59px 0 53px;
+}
+
+.places-block .block-header {
+    margin-bottom: 35px
+}
+
+.metro-fields {
+    margin-top: 4px;
+}
+
+.description-block .block-header {
+    margin-bottom: 15px;
+}
+
+.description-block .description-title {
+    font-weight: 100;
+    font-size: 18px;
+    display: block;
+    margin: 0 0 19px;
+}
+
+.description-block .description-wrap {
+    border: 2px solid #fff;
+    border-radius: 4px;
+    min-height: 78px;
+    margin-bottom: 23px;
+    padding: 6px 0 6px 9px;
+}
+
+.description-block .description-wrap p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.rooms-description-list {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.rooms-description-list tr th:first-child,
+.rooms-description-list tr td:first-child {
+    text-align: left;
+    padding-left: 17px;
+    width: 133px;
+}
+
+.rooms-description-list tr th:last-child {
+    text-align: left;
+}
+
+.rooms-description-list td {
+    border-bottom: 1px solid #fff;
+    height: 91px;
+}
+
+.rooms-description-list th {
+    background: #fff;
+    color: #4d87b2;
+    font-weight: 100;
+    padding: 7px 0 6px;
+}
+
+.rooms-description-list tr th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.rooms-description-list tr th:last-child {
+    border-top-right-radius: 10px;
+    width: 290px;
+    padding-left: 24px;
+}
+
+.rooms-description-list tbody tr:nth-child(2n+1) {
+    background: url("../images/table-bg.png") 0 center repeat-x;
+}
+
+.rooms-description-list .photo-list li {
+    float: left;
+    margin-right: 7px;
+}
+
+.rooms-description-list .photo-list li:last-child {
+    margin-right: 0;
+}
+
+.rooms-block {
+    margin: 36px 0 0;
+}
+
+.rooms-block .block-header {
+    margin-bottom: 19px;
+}
+
+.hostels-img-list li {
+    float: left;
+    margin-right: 17px;
+}
+
+.hostels-img-list li:last-child {
+    margin-right: 0;
+}
+
+.hostel-photo-block {
+    margin: 35px 0 0;
+
+}
+
+.hostel-photo-block .block-header {
+    margin-bottom: 9px;
+}
+
+.services-block {
+    margin-top: 34px;
+}
+
+.services-block .block-header {
+    margin-bottom: 27px;
+}
+
+.services-block .services-list {
+    float: left;
+    margin-right: 96px;
+}
+
+.services-block .block-content {
+    padding-left: 63px;
+
+}
+
+.services-block .services-list li {
+    margin-bottom: 17px;
+}
+
+/* kabinet_hostela style begin */
+
+
+/* kabinet_hostela_edit style begin */
+
+.edit-block .contacts-item .value-field {
+    border: 2px solid #fff;
+    border-radius: 8px;
+    padding: 4px 6px;
+    margin-top: -6px;
+    margin-left: -8px;
+    margin-bottom: 9px;
+}
+
+.value-field .add-button {
+    background: url("../images/add-button-1.png") no-repeat;
+    display: block;
+    width: 36px;
+    height: 39px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.value-field {
+    background: none;
+    color: #fff;
+    display: block;
+    width: auto;
+}
+
+input:focus {
+    outline:  none;
+}
+
+.drop-panel {
+    display: none;
+}
+
+.drop-panel-wrap .value-field {
+    background: url("../images/drop-panel-button.png") right -4px no-repeat;
+    cursor: pointer;
+    padding-right: 36px;
+    padding-bottom: 6px;
+    width: 281px;
+}
+
+.value-field input[type="text"] {
+    background: none;
+    border: none;
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.remove-button {
+    background: url("../images/delete-button.png") no-repeat;
+    width: 27px;
+    height: 27px;
+    display: block;
+    cursor: pointer;
+}
+
+.metro-list li .remove-button {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+}
+
+/* kabinet_hostela_edit style end */
