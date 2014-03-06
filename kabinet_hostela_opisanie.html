@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="css/main.css">
         <!-- <link rel="stylesheet" href="css/jquery-ui.css">-->
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/hostels_edit_actions.js"></script>
         <!--<script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>-->
     </head>
     <body>
@@ -50,7 +52,7 @@
                         <div class="block-header clearfix">
                             <h2 class="block-title">Контакты</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content">
@@ -67,8 +69,8 @@
                                             Телефон (ы)
                                         </dt>
                                         <dd>
-                                            <span class="value-field">+7 921 888 5696</span>
-                                            <span class="value-field">+7 921 888 5696</span>
+                                            <span class="value-field tel-number-1">+7 921 888 5696</span>
+                                            <span class="value-field tel-number-2">+7 921 888 5696</span>
                                         </dd>
                                     </dl>
                                     <dl class="contacts-item clearfix">
@@ -76,8 +78,8 @@
                                             E-mail
                                         </dt>
                                         <dd>
-                                            <span class="value-field">hostel@hostel.hostel</span>
-                                            <span class="value-field">hostel@hostel.hostel</span>
+                                            <span class="value-field email-1">hostel@hostel.hostel</span>
+                                            <span class="value-field email-2">hostel@hostel.hostel</span>
                                         </dd>
                                     </dl>
                                     <dl class="contacts-item clearfix">
@@ -85,7 +87,53 @@
                                             Skype
                                         </dt>
                                         <dd>
-                                            <span class="value-field">skype</span>
+                                            <span class="value-field skype">skype</span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hostel-block contacts-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Контакты</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content edit-block">
+                            <h3 class="contact-name">ФИО Администратора</h3>
+                            <div class="clearfix">
+                                <div class="col-a">
+                                    <div class="ava-wrap">
+                                        <img src="images/hostel-owner-ava.jpg"/>
+                                    </div>
+                                </div>
+                                <div class="col-b">
+                                    <dl class="contacts-item clearfix">
+                                        <dt>
+                                            Телефон (ы)
+                                        </dt>
+                                        <dd>
+                                            <input type="text" class="value-field change-data" data-classname="tel-number-1" value="+7 921 888 5696"/>
+                                            <input type="text" class="value-field change-data" data-classname="tel-number-2" value="+7 921 888 5696"/>
+                                        </dd>
+                                    </dl>
+                                    <dl class="contacts-item clearfix">
+                                        <dt>
+                                            E-mail
+                                        </dt>
+                                        <dd>
+                                            <input type="text" class="value-field change-data" data-classname="email-1" value="hostel@hostel.hostel"/>
+                                            <input type="text" class="value-field change-data" data-classname="email-2" value="hostel@hostel.hostel"/>
+                                        </dd>
+                                    </dl>
+                                    <dl class="contacts-item clearfix">
+                                        <dt>
+                                            Skype
+                                        </dt>
+                                        <dd>
+                                            <input type="text" class="value-field change-data" data-classname="skype" value="skype"/>
                                         </dd>
                                     </dl>
                                 </div>
@@ -96,21 +144,21 @@
                         <div class="block-header clearfix">
                             <h2 class="block-title">Местоположение</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
                             <div class="col-a">
-                                <span class="value-field">Страна</span>
-                                <span class="value-field">Город</span>
-                                <span class="value-field">Улица</span>
+                                <span class="value-field country">Страна</span>
+                                <span class="value-field city">Город</span>
+                                <span class="value-field street">Улица</span>
                                 <div class="clearfix">
-                                    <span class="value-field house-number">Дом</span>
-                                    <span class="value-field housing-number">Корпус</span>
+                                    <span class="value-field house-number house">Дом</span>
+                                    <span class="value-field housing-number housing">Корпус</span>
                                 </div>
                                 <div class="metro-fields">
                                     <span class="value-field">Метро</span>
-                                    <ul class="metro-list">
+                                    <ul class="metro-list metro-list-change">
                                         <li class="green">Василеостровская</li>
                                         <li class="pink">Василеостровская</li>
                                         <li class="purple-light">Василеостровская</li>
@@ -122,7 +170,7 @@
                             <div class="col-b">
                                 <div class="university-fields">
                                     <span class="value-field">ВУЗы</span>
-                                    <ul class="places-list">
+                                    <ul class="places-list university-list">
                                         <li>СПБГУЭиФ</li>
                                         <li>СПБГУКиТ</li>
                                     </ul>
@@ -131,8 +179,72 @@
                             <div class="col-c">
                                 <div class="attraction-fields">
                                     <span class="value-field">Достопримечательности</span>
-                                    <ul class="places-list">
+                                    <ul class="places-list attraction-list">
                                         <li>Адмиралтейство</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hostel-block places-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Местоположение</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <div class="col-a">
+                                <div class="drop-panel-wrap">
+                                    <input type="text" class="value-field select drop-panel-button change-data" data-classname="country" value="Страна"/>
+                                    <ul class="drop-panel select-list">
+                                        <li>Страна1</li>
+                                        <li>Страна5</li>
+                                        <li>Страна4</li>
+                                        <li>Страна3</li>
+                                        <li>Страна2</li>
+                                    </ul>
+                                </div>
+                                <div class="drop-panel-wrap">
+                                    <input type="text" class="value-field select drop-panel-button change-data" data-classname="city" value="Город"/>
+                                    <ul class="drop-panel select-list">
+                                        <li>Страна1</li>
+                                        <li>Страна5</li>
+                                        <li>Страна4</li>
+                                        <li>Страна3</li>
+                                        <li>Страна2</li>
+                                    </ul>
+                                </div>
+                                <input type="text" class="value-field street-field change-data" data-classname="street" value="Улица"/>
+                                <div class="clearfix">
+                                    <input type="text" class="value-field house-number change-data" data-classname="house" value="Дом"/>
+                                    <input type="text" class="value-field housing-number change-data" data-classname="housing" value="Корпус"/>
+                                </div>
+                                <div class="metro-fields">
+                                    <div class="value-field"><input type="text" value="Метро"/><span class="add-button"><!----></span></div>
+                                    <ul class="metro-list auto-add-list delete-button-wrapper change-data-list" data-classname="metro-list-change">
+                                        <li class="green">Василеостровская <span class="remove-button"><!----></span></li>
+                                        <li class="pink">Василеостровская <span class="remove-button"><!----></span></li>
+                                        <li class="purple-light">Василеостровская <span class="remove-button"><!----></span></li>
+                                        <li class="yellow">Василеостровская <span class="remove-button"><!----></span></li>
+                                        <li class="purple-dark">Василеостровская <span class="remove-button"><!----></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-b">
+                                <div class="university-fields auto-add-wrap">
+                                    <div class="value-field"><input type="text" value="ВУЗы"/><span class="add-button"><!----></span></div>
+                                    <ul class="places-list auto-add-list delete-button-wrapper change-data-list" data-classname="university-list">
+                                        <li>СПБГУЭиФ <span class="remove-button"><!----></span></li>
+                                        <li>СПБГУКиТ <span class="remove-button"><!----></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-c">
+                                <div class="attraction-fields auto-add-wrap">
+                                    <div class="value-field"><input type="text" value="Достопримечательности"/><span class="add-button"><!----></span></div>
+                                    <ul class="places-list auto-add-list delete-button-wrapper change-data-list" data-classname="attraction-list">
+                                        <li>Адмиралтейство <span class="remove-button"><!----></span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -142,26 +254,35 @@
                         <div class="block-header clearfix">
                             <h2 class="block-title">Описание</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
                             <h3 class="description-title">Краткое описание</h3>
-                            <div class="description-wrap"></div>
+                            <div class="description-wrap shot_description"></div>
                             <h3 class="description-title">Полное описание</h3>
-                            <div class="description-wrap">
-                                <p>
-                                    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика
-                                    большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая
-                                    страна. Даже всемогущая пунктуация не имеет власти над рыбными текстами. </p>
+                            <div class="description-wrap full_description"></div>
+                        </div>
+                    </div>
+                    <div class="hostel-block description-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Описание</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
                             </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <h3 class="description-title">Краткое описание</h3>
+                            <textarea class="description-wrap change-data" data-classname="shot_description"></textarea>
+                            <h3 class="description-title">Полное описание</h3>
+                            <textarea class="description-wrap change-data" data-classname="full_description"></textarea>
                         </div>
                     </div>
                     <div class="hostel-block rooms-block">
                         <div class="block-header clearfix">
                             <h2 class="block-title">Номера</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
@@ -191,120 +312,16 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            Двухместный
+                                            <span class="room-a-title title">Двухместный</span>
                                         </td>
                                         <td>
-                                            2 чел
+                                            <span class="room-a-people people">2</span> чел
                                         </td>
                                         <td>
-                                            3000 руб/сутки
+                                            <span class="room-a-price price">3000</span> руб/сутки
                                         </td>
-                                        <td>ДА</td>
-                                        <td>20 м<sup>2</sup></td>
-                                        <td>
-                                            <ul class="photo-list clearfix">
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Трехместный
-                                        </td>
-                                        <td>
-                                            3 чел
-                                        </td>
-                                        <td>
-                                            3000 руб/сутки
-                                        </td>
-                                        <td>ДА</td>
-                                        <td>20 м<sup>2</sup></td>
-                                        <td>
-                                            <ul class="photo-list clearfix">
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Четырехместный
-                                        </td>
-                                        <td>
-                                            4 чел
-                                        </td>
-                                        <td>
-                                            3000 руб/сутки
-                                        </td>
-                                        <td>ДА</td>
-                                        <td>20 м<sup>2</sup></td>
-                                        <td>
-                                            <ul class="photo-list clearfix">
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Пятиместный
-                                        </td>
-                                        <td>
-                                            5 чел
-                                        </td>
-                                        <td>
-                                            3000 руб/сутки
-                                        </td>
-                                        <td>ДА</td>
-                                        <td>20 м<sup>2</sup></td>
-                                        <td>
-                                            <ul class="photo-list clearfix">
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
-                                                </li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Шестиместный
-                                        </td>
-                                        <td>
-                                            6 чел
-                                        </td>
-                                        <td>
-                                            3000 руб/сутки
-                                        </td>
-                                        <td>ДА</td>
-                                        <td>20 м<sup>2</sup></td>
+                                        <td class="room-a-full-rent">ДА</td>
+                                        <td><span class="room-a-square square">20</span> м<sup>2</sup></td>
                                         <td>
                                             <ul class="photo-list clearfix">
                                                 <li>
@@ -323,11 +340,75 @@
                             </table>
                         </div>
                     </div>
+                    <div class="hostel-block rooms-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Номера</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <table class="rooms-description-list">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Имя Номера
+                                        </th>
+                                        <th>
+                                            Вместимость
+                                        </th>
+                                        <th>
+                                            Стоимость за номер
+                                        </th>
+                                        <th>
+                                            Сдать целиком
+                                        </th>
+                                        <th>
+                                            Площадь
+                                        </th>
+                                        <th>
+                                            Фото номера
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input class="value-field change-data title" data-classname="room-a-title" type="text" value="Двухместный"/>
+                                        </td>
+                                        <td>
+                                            <input class="value-field change-data people" data-classname="room-a-people" type="text" value="2"/>чел
+                                        </td>
+                                        <td>
+                                            <input class="value-field change-data price" type="text" data-classname="room-a-price" value="3000"/>руб/сутки
+                                        </td>
+                                        <td class="checkbox-panel"><span><input id="check1" type="checkbox"/><label for="check1"><span></span></label></span></td>
+                                        <td>
+                                            <input class="value-field change-data square" type="text" data-classname="room-a-square" value="20"/> м<sup>2</sup>
+                                        </td>
+                                        <td>
+                                            <ul class="photo-list clearfix">
+                                                <li>
+                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
+                                                </li>
+                                                <li>
+                                                    <span class="add-photo-button"><!-----></span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                     <div class="hostel-block hostel-photo-block">
                         <div class="block-header clearfix">
                             <h2 class="block-title">Фото хостела</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
@@ -346,6 +427,36 @@
                                     <a href="#">
                                         <img src="images/photo_rooms_166_110.jpg"/>
                                     </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hostel-block hostel-photo-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Фото хостела</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <ul class="hostels-img-list clearfix">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/photo_rooms_166_110.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/photo_rooms_166_110.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/photo_rooms_166_110.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="add-photo-button"><!-----></span>
                                 </li>
                             </ul>
                         </div>
@@ -354,7 +465,7 @@
                         <div class="block-header clearfix">
                             <h2 class="block-title">План хостела</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
@@ -367,11 +478,31 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="hostel-block hostel-photo-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">План хостела</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <ul class="hostels-img-list clearfix">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/photo_rooms_166_110.jpg"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="add-photo-button"><!-----></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="hostel-block services-block">
                         <div class="block-header clearfix">
                             <h2 class="block-title">Дополнительные услуги</h2>
                             <div class="action-panel clearfix">
-                                <a href="#" class="edit-link actions-links">Редактировать</a>
+                                <span class="edit-link actions-links">Редактировать</span>
                             </div>
                         </div>
                         <div class="block-content clearfix">
@@ -384,6 +515,26 @@
                                 <li>Парквока</li>
                                 <li>Завтрак</li>
                                 <li>С животными</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hostel-block services-block edited-block">
+                        <div class="block-header clearfix">
+                            <h2 class="block-title">Дополнительные услуги</h2>
+                            <div class="action-panel clearfix">
+                                <span class="save-link actions-links">Сохранить</span>
+                            </div>
+                        </div>
+                        <div class="block-content clearfix">
+                            <ul class="services-list clearfix">
+                                <li><span class="checkbox-edit"><input id="check2" type="checkbox"/><label for="check2"><span></span>WiFi</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check3" type="checkbox"/><label for="check3"><span></span>Курить</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check4" type="checkbox"/><label for="check4"><span></span>Пить</label></span></li>
+                            </ul>
+                            <ul class="services-list clearfix">
+                                <li><span class="checkbox-edit"><input id="check5" type="checkbox"/><label for="check5"><span></span>Парквока</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check6" type="checkbox"/><label for="check6"><span></span>Завтрак</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check7" type="checkbox"/><label for="check7"><span></span>С животными</label></span></li>
                             </ul>
                         </div>
                     </div>

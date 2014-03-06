@@ -1355,14 +1355,12 @@ a:hover {
     font-size: 16px;
     font-weight: 100;
     background-repeat: no-repeat;
+    background-image: url("../images/edit.png");
+    cursor: pointer;
 }
 
 .actions-links:hover {
     text-decoration: none;
-}
-
-.edit-link {
-    background-image: url("../images/edit.png");
 }
 
 .contact-name {
@@ -1437,6 +1435,8 @@ a:hover {
     font-size: 18px;
     margin-bottom: 21px;
     position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .value-field.house-number {
@@ -1461,7 +1461,6 @@ a:hover {
     background-position: 0 center;
     margin: 0 0 14px 10px;
     font-size: 18px;
-    position: relative;
     width: 235px;
 }
 
@@ -1546,9 +1545,18 @@ a:hover {
 .description-block .description-wrap {
     border: 2px solid #fff;
     border-radius: 4px;
-    min-height: 78px;
+    height: 78px;
     margin-bottom: 23px;
     padding: 6px 0 6px 9px;
+    width: 1045px;
+    display: block;
+    background: none;
+    font-size: 14px;  font-weight: 100;
+    color: #fff;
+    line-height: 16px;
+    font-family: 'Open Sans', sans-serif;
+    overflow: auto;
+    resize: none;
 }
 
 .description-block .description-wrap p {
@@ -1559,7 +1567,6 @@ a:hover {
 
 .rooms-description-list {
     width: 100%;
-    text-align: center;
     font-size: 16px;
     font-weight: 100;
 }
@@ -1567,7 +1574,6 @@ a:hover {
 .rooms-description-list tr th:first-child,
 .rooms-description-list tr td:first-child {
     text-align: left;
-    padding-left: 17px;
     width: 133px;
 }
 
@@ -1578,6 +1584,7 @@ a:hover {
 .rooms-description-list td {
     border-bottom: 1px solid #fff;
     height: 91px;
+    text-align: center;
 }
 
 .rooms-description-list th {
@@ -1589,6 +1596,7 @@ a:hover {
 
 .rooms-description-list tr th:first-child {
     border-top-left-radius: 10px;
+    padding-left: 12px;
 }
 
 .rooms-description-list tr th:last-child {
@@ -1604,6 +1612,7 @@ a:hover {
 .rooms-description-list .photo-list li {
     float: left;
     margin-right: 7px;
+    width: 93px;
 }
 
 .rooms-description-list .photo-list li:last-child {
@@ -1651,7 +1660,6 @@ a:hover {
 
 .services-block .block-content {
     padding-left: 63px;
-
 }
 
 .services-block .services-list li {
@@ -1694,8 +1702,21 @@ input:focus {
     outline:  none;
 }
 
+.drop-panel-wrap {
+    position: relative;
+}
+
 .drop-panel {
     display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 5px 2px #4d87b2;
+    border-radius: 3px;
+
 }
 
 .drop-panel-wrap .value-field {
@@ -1706,28 +1727,178 @@ input:focus {
     width: 281px;
 }
 
+.select-list li {
+    cursor: pointer;
+    color: #4d87b2;
+    padding: 5px 10px;
+}
+
+.select-list li:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.select-list li:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.select-list li:hover {
+    background: #4d87b2;
+    color: #fff;
+}
+
 .value-field input[type="text"] {
     background: none;
     border: none;
     display: block;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 100;
+    padding: 0;
 }
 
 .remove-button {
     background: url("../images/delete-button.png") no-repeat;
     width: 27px;
     height: 27px;
-    display: block;
+    display: none;
     cursor: pointer;
 }
 
-.metro-list li .remove-button {
-    position: absolute;
+.edited-block .remove-button {
+    display: block;
+}
 
+.delete-button-wrapper li {
+    position: relative;
+}
+
+.delete-button-wrapper li .remove-button {
+    position: absolute;
     right: 0;
     top: 0;
 }
+
+.add-photo-button {
+    display: block;
+    background: url("../images/add-button.png") no-repeat;
+    width: 50px;
+    height: 47px;
+    cursor: pointer;
+    margin: 10px auto 0;
+}
+
+.rooms-description-list .value-field {
+    display: block;
+    border: 2px solid #fff;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 5px 10px 5px;
+    font-weight: 100;
+}
+
+.rooms-description-list .name {
+    width: 110px;
+}
+
+.rooms-description-list .number {
+    width: 50px;
+}
+
+.rooms-description-list .square {
+    width: 47px;
+}
+
+.rooms-description-list .price {
+    width: 125px;
+}
+
+
+.checkbox-edit input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-edit label {
+    color: #333;
+    font-size: 16px;
+    display: block;
+    cursor: pointer;
+    color: #fff;
+    font-family: "Open sans";
+}
+
+.checkbox-edit input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 21px;
+    margin: -3px 10px 0;
+    vertical-align: middle;
+    background: url(../images/check.png) -21px top no-repeat;
+    cursor: pointer;
+}
+
+.checkbox-edit input[type="checkbox"]:checked + label span {
+    background: url(../images/check.png) 0 top no-repeat;
+}
+
+.hostel-photo-block .add-photo-button {
+    margin-top: 30px;
+}
+
+.street-field {
+    width: 307px;
+}
+
+.places-block.edited-block .value-field {
+    padding-bottom: 6px;
+}
+
+.hostel-block.edited-block {
+    display: none;
+}
+
+.rooms-description-list span.title,
+.rooms-description-list span.people,
+.rooms-description-list span.price,
+.rooms-description-list span.square {
+    padding: 5px 8px 5px 12px;
+
+}
+
+.rooms-description-list span.title,
+.rooms-description-list input.title {
+    width: 106px;
+    margin: 0;
+}
+
+.rooms-description-list span.people,
+.rooms-description-list input.people {
+    width: 10px;
+    display: inline-block;
+    margin: 0 3px 0 0;
+    text-align: center;
+}
+
+.rooms-description-list span.price,
+.rooms-description-list input.price {
+    width: 40px;
+    display: inline-block;
+    margin: 0 3px 0 0;
+    text-align: center;
+}
+
+.rooms-description-list span.square,
+.rooms-description-list input.square {
+    width: 18px;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+
+.rooms-description-list span.square {
+    margin-right: 4px;
+}
+
 
 /* kabinet_hostela_edit style end */
