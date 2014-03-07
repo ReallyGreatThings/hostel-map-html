@@ -107,6 +107,10 @@
                                 <div class="col-a">
                                     <div class="ava-wrap">
                                         <img src="images/hostel-owner-ava.jpg"/>
+                                        <div class="edit-photo-wrap">
+                                            <span>Редактировать</span>
+                                            <input class="file-filed" type="file"/>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-b">
@@ -318,9 +322,9 @@
                                             <span class="room-a-people people">2</span> чел
                                         </td>
                                         <td>
-                                            <span class="room-a-price price">3000</span> руб/сутки
+                                            <span class="room-a-price price">3000</span> <span class="price_subtitle">руб/сутки</span>
                                         </td>
-                                        <td class="room-a-full-rent">ДА</td>
+                                        <td class="room-a-full-rent">НЕТ</td>
                                         <td><span class="room-a-square square">20</span> м<sup>2</sup></td>
                                         <td>
                                             <ul class="photo-list clearfix">
@@ -380,9 +384,9 @@
                                             <input class="value-field change-data people" data-classname="room-a-people" type="text" value="2"/>чел
                                         </td>
                                         <td>
-                                            <input class="value-field change-data price" type="text" data-classname="room-a-price" value="3000"/>руб/сутки
+                                            <input class="value-field change-data price" type="text" data-classname="room-a-price" value="3000"/><span class="price_subtitle">руб/сутки</span>
                                         </td>
-                                        <td class="checkbox-panel"><span><input id="check1" type="checkbox"/><label for="check1"><span></span></label></span></td>
+                                        <td class="checkbox-panel"><span class="checkbox-edit"><input class="room-rent-check" id="check1" data-classname="room-a-full-rent" type="checkbox"/><label for="check1"><span></span></label></span></td>
                                         <td>
                                             <input class="value-field change-data square" type="text" data-classname="room-a-square" value="20"/> м<sup>2</sup>
                                         </td>
@@ -395,7 +399,10 @@
                                                     <a href="#"><img src="images/photo_rooms_93_67.jpg"/></a>
                                                 </li>
                                                 <li>
-                                                    <span class="add-photo-button"><!-----></span>
+                                                    <div class="add-photo-button-wrap">
+                                                        <span class="add-photo-button"><!-----></span>
+                                                        <input class="add-photo-field" type="file"/>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </td>
@@ -456,7 +463,10 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <span class="add-photo-button"><!-----></span>
+                                    <div class="add-photo-button-wrap">
+                                        <span class="add-photo-button"><!-----></span>
+                                        <input class="add-photo-field" type="file"/>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -493,7 +503,10 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <span class="add-photo-button"><!-----></span>
+                                    <div class="add-photo-button-wrap">
+                                        <span class="add-photo-button"><!-----></span>
+                                        <input class="add-photo-field" type="file"/>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -507,14 +520,14 @@
                         </div>
                         <div class="block-content clearfix">
                             <ul class="services-list clearfix">
-                                <li>WiFi</li>
-                                <li>Курить</li>
-                                <li>Пить</li>
+                                <li class="wifi">WiFi</li>
+                                <li class="smoke">Курить</li>
+                                <li class="drink">Пить</li>
                             </ul>
                             <ul class="services-list clearfix">
-                                <li>Парквока</li>
-                                <li>Завтрак</li>
-                                <li>С животными</li>
+                                <li class="parking">Парквока</li>
+                                <li class="breakfast">Завтрак</li>
+                                <li class="animal">С животными</li>
                             </ul>
                         </div>
                     </div>
@@ -527,14 +540,14 @@
                         </div>
                         <div class="block-content clearfix">
                             <ul class="services-list clearfix">
-                                <li><span class="checkbox-edit"><input id="check2" type="checkbox"/><label for="check2"><span></span>WiFi</label></span></li>
-                                <li><span class="checkbox-edit"><input id="check3" type="checkbox"/><label for="check3"><span></span>Курить</label></span></li>
-                                <li><span class="checkbox-edit"><input id="check4" type="checkbox"/><label for="check4"><span></span>Пить</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check2" class="change-services-list" type="checkbox" data-classname="wifi"/><label for="check2"><span></span>WiFi</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check3" class="change-services-list" type="checkbox" data-classname="smoke"/><label for="check3"><span></span>Курить</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check4" class="change-services-list" type="checkbox" data-classname="drink"/><label for="check4"><span></span>Пить</label></span></li>
                             </ul>
                             <ul class="services-list clearfix">
-                                <li><span class="checkbox-edit"><input id="check5" type="checkbox"/><label for="check5"><span></span>Парквока</label></span></li>
-                                <li><span class="checkbox-edit"><input id="check6" type="checkbox"/><label for="check6"><span></span>Завтрак</label></span></li>
-                                <li><span class="checkbox-edit"><input id="check7" type="checkbox"/><label for="check7"><span></span>С животными</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check5" class="change-services-list" type="checkbox" data-classname="parking"/><label for="check5"><span></span>Парквока</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check6" class="change-services-list" type="checkbox" data-classname="breakfast"/><label for="check6"><span></span>Завтрак</label></span></li>
+                                <li><span class="checkbox-edit"><input id="check7" class="change-services-list" type="checkbox" data-classname="animal"/><label for="check7"><span></span>С животными</label></span></li>
                             </ul>
                         </div>
                     </div>

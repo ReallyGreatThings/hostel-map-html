@@ -13,6 +13,28 @@ $(document).ready(function(){
             var htmlCont = $(this).html();
             $("." + $(this).attr('data-classname')).html(htmlCont);
         });
+
+        var roomCheckList = $('.room-rent-check');
+        roomCheckList.each(function(){
+            var $chbox = $(this);
+            var $span = $("." + $chbox.attr('data-classname'))
+            if($chbox.is(':checked'))       {
+                $span.text('ДА');
+            } else {
+                $span.text('НЕТ');
+            }
+        });
+
+        var servicesChekList = $('.change-services-list');
+        servicesChekList.each(function(){
+            var $chbox = $(this);
+            var $elem = $("." + $chbox.attr('data-classname'));
+            if($chbox.is(':checked')){
+                $elem.show();
+            } else {
+                $elem.hide();
+            }
+        });
     });
 
 

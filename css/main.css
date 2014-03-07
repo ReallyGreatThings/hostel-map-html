@@ -16,6 +16,7 @@ input,
 select,
 textarea {
     color: #222;
+
 }
 
 html {
@@ -1389,6 +1390,42 @@ a:hover {
     padding-top: 0;
 }
 
+.contacts-block .col-a .ava-wrap {
+    position: relative;
+    width: 235px;
+}
+
+.contacts-block .col-a .edit-photo-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 100;
+    color: #fff;
+    background: url("../images/black-opacity.png") repeat-y;
+}
+
+.contacts-block .col-a .edit-photo-wrap span {
+    display: block;
+    margin-top: 18px;
+}
+
+.contacts-block .col-a .edit-photo-wrap .file-filed {
+    position: absolute;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 100px;
+    left: 0;
+    top: 0;
+    width: 235px;
+    height: 60px;
+}
+
 .contacts-item {
     margin: 0;
 }
@@ -1662,8 +1699,21 @@ a:hover {
     padding-left: 63px;
 }
 
+.services-block.edited-block .block-content {
+    padding-left: 24px;
+}
+
+.services-block.edited-block .services-list {
+    margin-right: 57px;
+}
+
+.services-block.edited-block .services-list li {
+    display: block !important;
+}
+
 .services-block .services-list li {
     margin-bottom: 17px;
+    display: none;
 }
 
 /* kabinet_hostela style begin */
@@ -1780,13 +1830,33 @@ input:focus {
     top: 0;
 }
 
+.add-photo-button-wrap {
+    width: 50px;
+    height: 47px;
+    position: relative;
+    margin: 10px auto 0;
+    cursor: pointer;
+}
+
+.add-photo-button-wrap .add-photo-field {
+    font-size: 100px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 47px;
+    cursor: pointer;
+}
+
 .add-photo-button {
     display: block;
     background: url("../images/add-button.png") no-repeat;
     width: 50px;
     height: 47px;
     cursor: pointer;
-    margin: 10px auto 0;
 }
 
 .rooms-description-list .value-field {
@@ -1900,5 +1970,59 @@ input:focus {
     margin-right: 4px;
 }
 
-
 /* kabinet_hostela_edit style end */
+
+
+@media (max-width: 1190px) {
+    .c-align {
+        width: 98%;
+    }
+}
+
+@media (max-width: 959px) {
+    .c-align {
+        width: 926px;
+    }
+}
+
+@media (max-width:  1190px) {
+    .places-block .col-a,
+    .places-block .col-b,
+    .places-block .col-c {
+        width: 30%;
+    }
+    .drop-panel-wrap .value-field {
+        width: auto;
+    }
+    .description-block .description-wrap {
+        padding: 6px 0 6px 3%;
+        width: 97%;
+    }
+    .value-field.housing-number {
+        width: 40%;
+    }
+    .value-field.house-number {
+        width: 40%;
+    }
+    .street-field {
+        padding-right: 13% !important;
+        padding-left: 5% !important;
+        width: 82%;
+    }
+
+    .drop-panel-wrap .value-field {
+        padding-right: 13% !important;
+        padding-left: 5% !important;
+        width: 82%;
+    }
+
+    .price_subtitle {
+        display: block;
+        margin-top: 3px;
+    }
+
+    .edited-block .price_subtitle {
+        margin-top: 0;
+    }
+
+}
