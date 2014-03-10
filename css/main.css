@@ -1972,6 +1972,15 @@ input:focus {
 
 /* kabinet_hostela_edit style end */
 
+@-moz-document url-prefix() {
+    .contacts-item span.value-field {
+        margin: -1px 0px 16px 0;
+        padding-left: 1px;
+    }
+    .places-block.edited-block .value-field {
+        padding-bottom: 7px;
+    }
+}
 
 @media (max-width: 1190px) {
     .c-align {
