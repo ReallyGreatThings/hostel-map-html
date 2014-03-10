@@ -86,8 +86,9 @@ $(document).ready(function(){
         $('.drop-panel').hide();
     });
 
-    $('.drop-panel, .drop-panel-button').click(function(){
-        event.stopPropagation();
+    $('.drop-panel, .drop-panel-button').click(function(e){
+        if (!e) var e = window.event;
+        e.stopPropagation();
     });
 
     $('.select-list li').on('click', function(){
