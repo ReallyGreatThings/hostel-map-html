@@ -3,7 +3,13 @@ $(document).ready(function(){
 
 /* show/hide edit bocks */
     $('.edit-link').on('click', function(){
-            $(this).parents('.hostel-block').hide().next('.hostel-block').show();
+            var $editblock =$(this).parents('.hostel-block').hide().next('.hostel-block');
+            var $firstfield = $editblock.find('.change-data').first();
+            $editblock.show();
+            $firstfield.focus();
+            var value = $firstfield.val();
+            $firstfield.val('');
+            $firstfield.val(value);
     });
 
     $('.save-link').on('click', function(){
