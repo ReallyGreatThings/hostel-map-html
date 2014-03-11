@@ -490,7 +490,7 @@ table.fc-border-separate thead th{
     border-bottom:1px solid #fff;
     width: 14.2857142857%;
     padding: 0;
-    font-size:30px;
+    font-size:24px;
     color:#ffffff;
     line-height: 1;
 }
@@ -570,6 +570,7 @@ table.fc-border-separate thead th{
 }
 .dialogFormField {
     padding: 0 0 20px;
+    position: relative;
 }
 .dialogFormField label {
     font-size: 30px;
@@ -626,6 +627,11 @@ table.fc-border-separate thead th{
     background: linear-gradient(#5f99c3, #4884b0);
 }
 
+.dialogFormFieldCenter {
+    position:absolute;
+    top:5px;
+    left:46%;
+}
 
 .calendar-nav {
     float: left;

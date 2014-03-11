@@ -83,7 +83,7 @@ $(document).ready(function() {
             calendar.fullCalendar('clientEvents', function (event) {
 
                 if(startDate.valueOf() == event.start.valueOf()){
-                    event.title = $('#dialogFormPrice').val();
+                    event.title = $('#dialogFormPrice').val() + 'р.';
                     calendar.fullCalendar('updateEvent', event);
                     isAdd = false;
                 }
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
             if(isAdd){
                 calendar.fullCalendar('renderEvent', {
-                    title: $('#dialogFormPrice').val(),
+                    title: $('#dialogFormPrice').val() + 'р.',
                     start: startDate,
                     allDay: true
                 });
@@ -195,6 +195,11 @@ $(document).ready(function() {
         if(selectStartDate != '' && selectEndDate == ''){
             hightlightFix($(this).data('date'));
         }
+        /*if(selectStartDate == '' && selectEndDate == ''){
+            console.log('sdfsdf');
+            $('td.fc-day').removeClass('dateFix').removeClass('startFix').removeClass('endFix');
+            $(this).addClass('dateFix').addClass('startFix');
+        }*/
     });
     //select range fix
 

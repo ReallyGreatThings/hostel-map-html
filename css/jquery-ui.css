@@ -230,7 +230,7 @@ button.ui-button::-moz-focus-inner {
     display: none;
     padding: 0;
     width: 17em;
-    z-index: 30 !important;
+    z-index: 101 !important;
     margin-left: -2px;
     margin-top: 2px;
 }
