@@ -35,7 +35,12 @@ $(document).ready(function() {
             $('#dialogFormDateEndFormat').val(end);
         }
 
-        $('#dialogFormPrice').val(price);
+        if(isNaN(parseInt(price))) {
+            $('#dialogFormPrice').val('');
+        }else{
+            $('#dialogFormPrice').val(parseInt(price));
+        }
+
     }
 
     $('#dialogFormDateStartFormat, #dialogFormDateEndFormat').on('change', function(){
@@ -83,7 +88,7 @@ $(document).ready(function() {
             calendar.fullCalendar('clientEvents', function (event) {
 
                 if(startDate.valueOf() == event.start.valueOf()){
-                    event.title = $('#dialogFormPrice').val() + 'р.';
+                    event.title = parseInt($('#dialogFormPrice').val()) + 'р.';
                     calendar.fullCalendar('updateEvent', event);
                     isAdd = false;
                 }
@@ -92,7 +97,7 @@ $(document).ready(function() {
 
             if(isAdd){
                 calendar.fullCalendar('renderEvent', {
-                    title: $('#dialogFormPrice').val() + 'р.',
+                    title: parseInt($('#dialogFormPrice').val()) + 'р.',
                     start: startDate,
                     allDay: true
                 });
