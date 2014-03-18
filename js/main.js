@@ -75,7 +75,7 @@ $(function() {
         location.href = $(this).data('url');
     });
 
-    $(document).on('click', ('.searchResultOtherFilterCheck'), function(e){
+    $(document).on('click', '.searchResultOtherFilterCheck', function(e){
         var checkbox = $(this).find('input[type="checkbox"]');
         if(checkbox.attr("checked") == 'checked'){
             $(this).removeClass('active');
@@ -165,16 +165,17 @@ $(function() {
 
     $(document).on('click', '.remove-button', function(){$(this).parents('li').remove()});
 
-
-    var offsetTop = $('.fluidBlock').offset().top;
-    $(document).scroll(function(){
-            var scroll = $(document).scrollTop();
-            if(scroll >= (offsetTop )){
-                $('.fluidBlock').css("top" ,scroll - offsetTop + 10);
-            }else{
-                $('.fluidBlock').css("top", 0);
-            }
-    });
+    if($('.fluidBlock').length) {
+        var offsetTop = $('.fluidBlock').offset().top;
+        $(document).scroll(function(){
+                var scroll = $(document).scrollTop();
+                if(scroll >= (offsetTop )){
+                    $('.fluidBlock').css("top" ,scroll - offsetTop + 10);
+                }else{
+                    $('.fluidBlock').css("top", 0);
+                }
+        });
+    }
 
     $('a[data-role="tab"]').click(function(){
         var tabId = $(this).attr('href');
@@ -183,10 +184,44 @@ $(function() {
         $('.tab').removeClass('active');
         $(tabId).addClass('active');
 
-        offsetTop = $('.fluidBlock').offset().top;
+        if($('.fluidBlock').length){
+            offsetTop = $('.fluidBlock').offset().top;
+        }
         return false;
     });
 
+    $('a[data-role="popupShow"]').click(function(){
+        var element = $(this).attr('href');
+        $('.popupWrapper').show();
+        $('.popupContent').hide();
+        $(element).show();
+        return false;
+    });
+
+    $(document).on('click', '.popupContent', function(){
+        return false;
+    });
+
+    $('a[data-role="popupClose"], button[data-role="popupClose"]').click(function(){
+        $('.popupWrapper, .popupContent').hide();
+    });
+
+    $(document).on('click', '.popupWrapper', function(){
+        $('.popupWrapper, .popupContent').hide();
+    });
+
+    $(document).on('click', '.personIconBlue li', function(){
+        var checkbox = $(this).find('input[type="checkbox"]');
+        if(checkbox.length){
+            if(checkbox.attr('checked') == 'checked'){
+                $(this).removeClass('active');
+                checkbox.removeAttr('checked');
+            }else{
+                $(this).addClass('active');
+                checkbox.attr('checked', true);
+            }
+        }
+    });
     //load animation
     /*if($("#loaderImage").length){
         var cSpeed=9;

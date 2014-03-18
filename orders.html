@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,cyrillic' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css">-->
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!--<script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>-->
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- header block begin -->
+<header class="pageHeader">
+    <div class="pageHeaderWrapper clearfix">
+        <div class="logo">
+            <a href="/"><img src="img/logo.png" alt="" width="132" height="27"/></a>
+        </div>
+        <div class="headerClient">
+            <a href="#" class="headerClientLogin">Войти</a>
+        </div>
+    </div>
+</header>
+<!-- header block end -->
+
+
+<!-- content block begin -->
+<div class="c-align content-wrap">
+<ul class="tabs-navigation-menu clearfix">
+    <li class="current"><a href="#">Заявки (4)</a></li>
+    <li><a href="#">Календарь</a></li>
+    <li><a href="#">Описание</a></li>
+    <li><a href="#">Баланс</a></li>
+</ul>
+<div class="page-content-wrap">
+    <ul class="orderNav">
+        <li><a href="#ordersAll" data-role="tab">Все</a></li>
+        <li><a href="#ordersNew" data-role="tab">Новые</a></li>
+        <li><a href="#ordersSuccess" data-role="tab">Принятые</a></li>
+        <li><a href="#ordersAbort" data-role="tab">Отклоненные</a></li>
+        <li><a href="#ordersReserved" data-role="tab">Забронированные</a></li>
+        <li><a href="#ordersPay" data-role="tab">К оплате</a></li>
+    </ul>
+    <div class="tab" id="ordersPay">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td>К оплате</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab" id="ordersReserved">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td>Забронированно</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab" id="ordersAbort">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td>Отклонено</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab" id="ordersSuccess">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td>Принято</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab" id="ordersNew">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tab active" id="ordersAll">
+        <table class="ordersTable">
+            <thead class="ordersTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Номер</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+                <th>Стоимость</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="ordersTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>2 чел</td>
+                        </tr>
+                        <tr>
+                            <td>3 чел</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Двухместный (люкс)</td>
+                        </tr>
+                        <tr>
+                            <td>Трехместный</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>НЕТ</td>
+                        </tr>
+                        <tr>
+                            <td>НЕТ</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>20.01.14 - 28.01.14</td>
+                        </tr>
+                        <tr>
+                            <td>20.01.14 - 28.01.14</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>9000 р.</td>
+                        </tr>
+                        <tr>
+                            <td>19000 р.</td>
+                        </tr>
+                    </table>
+                </td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>2 чел</td>
+                        </tr>
+                        <tr>
+                            <td>3 чел</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Двухместный (люкс)</td>
+                        </tr>
+                        <tr>
+                            <td>Трехместный</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>НЕТ</td>
+                        </tr>
+                        <tr>
+                            <td>НЕТ</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>20.01.14 - 28.01.14</td>
+                        </tr>
+                        <tr>
+                            <td>20.01.14 - 28.01.14</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>9000 р.</td>
+                        </tr>
+                        <tr>
+                            <td>19000 р.</td>
+                        </tr>
+                    </table>
+                </td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>Двухместный (люкс)</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+                <td>9000 р.</td>
+                <td><a href="#ordersAnswer" class="ordersBtn" data-role="popupShow">Ответить</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- content block end -->
+
+<!-- footer block begin -->
+<footer class="site-footer-wrap clearfix">
+    <div class="col-a">
+        <p>2013 <a href="#">HOSTELMAP.RU</a></p>
+    </div>
+    <div class="col-b">
+        <ul class="footer-nav-menu clearfix">
+            <li><a href="#">хостелам</a></li>
+            <li><a href="#">о нас</a></li>
+            <li><a href="#">контакты</a></li>
+        </ul>
+    </div>
+</footer>
+<!-- footer block end -->
+
+<div class="popupWrapper">
+    <div class="popupContent" id="ordersAlternative">
+        <div class="popupHeader">Альтернативный вариант</div>
+        <table class="popupTable">
+            <thead class="popupTableHeader">
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во человек</th>
+                <th>Подселение</th>
+                <th>Даты</th>
+            </tr>
+            </thead>
+            <tbody class="popupTableItems">
+            <tr>
+                <td>Тарасов Евгений</td>
+                <td>2 чел</td>
+                <td>НЕТ</td>
+                <td>20.01.14 - 28.01.14</td>
+            </tr>
+            </tbody>
+        </table>
+        <ul class="popupAlternativeCheck clearfix">
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square active pointer">
+                    <label><input type="checkbox" checked="checked"> Двухместный</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li class="active"><input type="checkbox" checked="checked"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square pointer">
+                    <label><input type="checkbox"> Двухместный (люкс)</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square pointer">
+                    <label><input type="checkbox"> Трехместный</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square pointer">
+                    <label><input type="checkbox"> Четырехместный</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square pointer">
+                    <label><input type="checkbox"> Пятиместный</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+            <li class="popupAlternativeCheckItem">
+                <div class="checkboxEmulate blue-square pointer">
+                    <label><input type="checkbox"> Шестиместный</label>
+                </div>
+                <ul class="personIconBlue">
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                    <li><input type="checkbox"/></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clearfix popupAlternativeFooter">
+            <div class="popupAlternativePrice">Цена: 4000 р.</div>
+            <button type="submit" class="popupAlternativeSubmit" data-role="popupClose">Отправить</button>
+        </div>
+    </div>
+    <div class="popupContent" id="ordersAnswer">
+        <ul class="popupOrdersActions">
+            <li><a href="#" data-role="popupClose">Принять</a></li>
+            <li><a href="#ordersAlternative" data-role="popupShow">Альтернативный вариант</a></li>
+            <li><a href="#" data-role="popupClose">Отклонить</a></li>
+        </ul>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="js/jquery.slides.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1593,11 +1593,12 @@ input:focus {
             text-align: right;
             font-size: 30px;
         }
-        .kartaAdd {
+        .kartaAdd{
             text-align: right;
             margin-top: 17px;
         }
-            .kartaAddBtn {
+            .kartaAddBtn,
+            .ordersBtn{
                 display: inline-block;
                 line-height: 27px;
                 text-align: center;
@@ -1617,7 +1618,8 @@ input:focus {
                 background: -o-linear-gradient(#ffffff, #dfdfdf);
                 background: linear-gradient(#ffffff, #dfdfdf);
             }
-            .kartaAddBtn:hover{
+            .kartaAddBtn:hover,
+            .ordersBtn:hover {
                 text-decoration: none;
             }
 .response {
@@ -1659,7 +1661,221 @@ input:focus {
         width: 100%;
         height:auto;
     }
-/*karta end start*/
+/*karta end*/
+/*orders start*/
+.orderNav {
+    margin:0;
+    padding:0;
+}
+    .orderNav li {
+        display: inline-block;
+        background: #fff;
+        border-radius: 7px;
+        padding: 4px 19px;
+        margin:0 15px 15px 0;
+    }
+    .orderNav a {
+        color:#4884b0;
+        font-size: 18px;
+        text-decoration: none;
+    }
+.ordersTable {
+    width: 100%;
+    font-size: 16px;
+}
+    .ordersTable table {
+        width: 100%;
+    }
+    .ordersTableHeader {
+    }
+        .ordersTableHeader tr {
+            height: 35px;
+        }
+            .ordersTableHeader th {
+                color:#4884b0;
+                font-weight: normal;
+                background: #fff;
+            }
+            .ordersTableHeader th:first-child {
+                border-radius:5px 0 0 0;
+            }
+            .ordersTableHeader th:last-child {
+                border-radius: 0 5px 0 0;
+                width: 140px;
+            }
+    .ordersTableItems {
+
+    }
+        .ordersTableItems tr {
+
+        }
+        .ordersTableItems > tr {
+            border-bottom: 1px solid #ffffff;
+            /*height: 53px;*/
+        }
+            .ordersTableItems td {
+                text-align: center;
+                height: 53px;
+            }
+            .ordersTable table td {
+                height:36px;
+            }
+        .ordersTableItems > tr:nth-child(2n+1) {
+
+
+            background: #88a7c3;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#88a7c3), color-stop(50%,#6e94b3), color-stop(100%,#88a7c3));
+            background: -webkit-linear-gradient(top,  #88a7c3 0%,#6e94b3 50%,#88a7c3 100%);
+            background: -moz-linear-gradient(top,  #88a7c3 0%, #6e94b3 50%, #88a7c3 100%);
+            background: -o-linear-gradient(top,  #88a7c3 0%,#6e94b3 50%,#88a7c3 100%);
+            background: -ms-linear-gradient(top,  #88a7c3 0%,#6e94b3 50%,#88a7c3 100%);
+            background: linear-gradient(to bottom,  #88a7c3 0%,#6e94b3 50%,#88a7c3 100%);
+        }
+/*orders end*/
+
+/*popUp*/
+.popupWrapper {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #333333;
+    background: rgba(0, 0, 0, .60);
+    display: none;
+}
+    .popupContent {
+        position: absolute;
+        top:165px;
+        left:50%;
+        width: 626px;
+        margin-left:-328px;
+        padding: 15px;
+        background: #eaeffa;
+        background: rgba(234, 239, 250, .70);
+        border-radius: 10px;
+        box-shadow: 0 0 5px #000;
+        color:#4e7aa8;
+        font-size: 18px;
+        display: none;
+    }
+    .popupHeader {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .popupTable {
+        width: 100%;
+    }
+        .popupTableHeader {
+
+        }
+        .popupTableHeader th {
+            color:#fff;
+            background: #5981ac;
+            font-weight: normal;
+            height: 40px;
+        }
+            .popupTableHeader th:first-child {
+                border-radius: 5px 0 0 0;
+            }
+            .popupTableHeader th:last-child {
+                 border-radius: 0 5px 0 0;
+             }
+        .popupTableItems {
+
+        }
+            .popupTableItems > tr {
+                border-bottom: 1px solid #5981ac;
+                height: 40px;
+            }
+            .popupTableItems td {
+                text-align: center;
+            }
+.popupOrdersActions {
+    text-align: center;
+    margin: 10px 0;
+}
+    .popupOrdersActions li {
+        display: inline-block;
+        margin:0 10px;
+    }
+    .popupOrdersActions a{
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 4px;
+        border: none;
+        height: 27px;
+        line-height: 27px;
+        text-transform: uppercase;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+        padding:0 25px;
+        color:#ffffff;
+        display: inline-block;
+        background: #518db8;
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#609ac3), to(#4884b0));
+        background: -webkit-linear-gradient(#609ac3, #4884b0);
+        background: -moz-linear-gradient(#609ac3, #4884b0);
+        background: -ms-linear-gradient(#609ac3, #4884b0);
+        background: -o-linear-gradient(#609ac3, #4884b0);
+        background: linear-gradient(#609ac3, #4884b0);
+    }
+.popupAlternativeCheck {
+
+}
+    .popupAlternativeCheckItem {
+        float: left;
+        width: 33.3333333333%;
+    }
+.popupAlternativeFooter {
+    margin-top: 50px;
+}
+.popupAlternativePrice {
+    float: left;
+    font-size: 30px;
+    color:#4e7aa8;
+    margin-left: 5px;
+    line-height: 36px;
+}
+.popupAlternativeSubmit {
+    float: right;
+    background: #5981ac;
+    border-radius: 6px;
+    width: 155px;
+    height: 36px;
+    color:#ffffff;
+    font-size: 18px;
+    border: none;
+    margin-right:5px;
+    font-family: 'Open Sans', sans-serif;
+}
+.personIconBlue {
+    margin: -10px 0 0 25px;
+}
+    .personIconBlue li {
+        display: inline-block;
+        background: url(../img/person-icon-blue.png) no-repeat -19px 0 transparent;
+        width: 15px;
+        height: 33px;
+        position: relative;
+    }
+    .personIconBlue li.active {
+        background-position: 0 0;
+    }
+    .personIconBlue input[type="checkbox"]{
+        position: absolute;
+        left: -10000px;
+    }
+.blue-square {
+    background: url(../img/checkbox.png) no-repeat 0 -26px transparent;
+}
+    .blue-square.active {
+        background-position: 0 12px;
+    }
+/*popUp End*/
+
 
 @-moz-document url-prefix() {
     .places-block.edited-block .value-field {
