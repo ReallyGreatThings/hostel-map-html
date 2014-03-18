@@ -569,20 +569,26 @@ input[type="text"]{
     right: 0;
     background-position: 0 center;
 }
-.searchResultItemRatingStars {
+.searchResultItemRatingStars,
+.responseRating,
+.kartaRating {
     margin:5px 0;
     padding:0;
     list-style: none;
     text-align: center;
 }
-.searchResultItemRatingStars li {
+.searchResultItemRatingStars li,
+.responseRating li,
+.kartaRating li{
     display: inline-block;
     width: 34px;
     height: 34px;
     margin: 0 3px;
     background: url(../img/rating-stars.png) no-repeat 0 0 transparent;
 }
-.searchResultItemRatingStars li.active {
+.searchResultItemRatingStars li.active,
+.responseRating li.active,
+.kartaRating li.active{
     background-position: 0 bottom;
 }
 .searchResultItemDescr {
@@ -817,6 +823,10 @@ a:hover {
     line-height: 30px;
     font-weight: 100;
 }
+    .contact-name .rightLabel{
+        font-size: 20px;
+        float: right;
+    }
 
 .block-content {
     padding: 12px 0 0
@@ -1418,6 +1428,238 @@ input:focus {
 }
 
 /* kabinet_hostela_edit style end */
+
+/*karta start*/
+.kartaGallery {
+    margin:0 auto;
+}
+.checkboxEmulate {
+    font-size: 15px;
+    margin: 5px 0 15px;
+    padding:12px 0 0 30px;
+    background: url(../img/checkboxEmulate.png) no-repeat 0 13px transparent;
+    position: relative;
+    height: 20px;
+}
+    .checkboxEmulate.active {
+        background-position: 0 -26px;
+    }
+    .checkboxEmulate input[type="checkbox"]{
+        position: absolute;
+        left: -10000px;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+.page-adress {
+    font-size:18px;
+}
+    .kartaRating {
+        float:right;
+    }
+    .kartaDescription {
+        float:left;
+        width: 62%;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .kartaService {
+        float: right;
+        width: 27.7%;
+    }
+.kartaContent {
+    margin-top:30px;
+}
+    .kartaLeft {
+        width:68.7%;
+        float: left;
+    }
+    .kartaRight {
+        width:29.6%;
+        float:right;
+        position: relative;
+    }
+        .kartaRight .wrapFix {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .centredText {
+            text-align: center;
+        }
+        .kartaRightCount {
+            float: right;
+            margin-right: 25px;
+        }
+        .kartaRightList {
+
+        }
+            .kartaRightListHeader {
+                background: #d9e2ec;
+                border-radius: 7px 7px 0 0;
+                color:#4e7aa8;
+                font-size: 14px;
+                text-align: center;
+                line-height: 35px;
+            }
+                .kartaRightListHeader-a {
+                    float: left;
+                    width: 55%;
+                }
+                .kartaRightListHeader-b {
+                    float: right;
+                    width: 40%;
+                }
+            .kartaRightList .places-list{
+                margin:5px 0 30px;
+            }
+            .kartaRightList li {
+                padding: 8px 0 0 35px;
+            }
+            .kartaRightList .remove-button {
+                top:8px !important;
+                left:0;
+            }
+            .kartaRightList .checkboxEmulate {
+                position: absolute;
+                top:0;
+                right:5px;
+                margin: 0;
+            }
+
+
+        .kartaRightBtn {
+            font-size: 18px;
+            border-radius: 4px;
+            border: none;
+            display: block;
+            height: 38px;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+            color:#ffffff;
+            background: #518db7;
+            background: -webkit-gradient(linear, 0 0, 0 bottom, from(#609ac3), to(#4884b0));
+            background: -webkit-linear-gradient(#609ac3, #4884b0);
+            background: -moz-linear-gradient(#609ac3, #4884b0);
+            background: -ms-linear-gradient(#609ac3, #4884b0);
+            background: -o-linear-gradient(#609ac3, #4884b0);
+            background: linear-gradient(#609ac3, #4884b0);
+        }
+    .wrapFix{
+        border-radius: 7px;
+        padding: 15px;
+    }
+    .kartaLeft .page-content-wrap {
+        margin-bottom:15px;
+    }
+    .kartaLeft-a {
+        float:left;
+        width: 44%;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+        .kartaLeft-a img {
+            width: 100%;
+            height: auto;
+        }
+    .kartaLeft-b {
+        float:right;
+        width: 52%;
+    }
+        .kartaLeft-b .contact-name {
+            margin-bottom: 8px;
+        }
+        .personIcon {
+            padding:0;
+            margin:0;
+            list-style: none;
+        }
+            .personIcon li {
+                display: inline-block;
+                background: url(../img/person-icon.png) no-repeat -25px 0 transparent;
+                height: 50px;
+                width: 20px;
+            }
+            .personIcon li.active {
+                background-position: 0 0;
+            }
+        .kartaPrice {
+            font-weight: bold;
+            text-align: right;
+            font-size: 30px;
+        }
+        .kartaAdd {
+            text-align: right;
+            margin-top: 17px;
+        }
+            .kartaAddBtn {
+                display: inline-block;
+                line-height: 27px;
+                text-align: center;
+                font-size: 11px;
+                border-radius: 4px;
+                border: none;
+                width: 110px;
+                height: 27px;
+                text-transform: uppercase;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+                color:#6f6f6f;
+                background: #ececec;
+                background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#dfdfdf));
+                background: -webkit-linear-gradient(#ffffff, #dfdfdf);
+                background: -moz-linear-gradient(#ffffff, #dfdfdf);
+                background: -ms-linear-gradient(#ffffff, #dfdfdf);
+                background: -o-linear-gradient(#ffffff, #dfdfdf);
+                background: linear-gradient(#ffffff, #dfdfdf);
+            }
+            .kartaAddBtn:hover{
+                text-decoration: none;
+            }
+.response {
+    padding: 20px 0 10px;
+    font-size: 14px;
+}
+    .page-content-wrap .response:first-child {
+        padding-top: 10px;
+    }
+    .responseText {
+        margin-left: 140px;
+    }
+        .responseTextHeader {
+            overflow: hidden;
+            margin: -15px 0 23px;
+        }
+        .responseAuthor {
+            float:left;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .responseRating {
+            float: right;
+            margin:0;
+        }
+    .responsePhoto {
+        float: left;
+        width: 115px;
+    }
+.tab{
+    display: none;
+    min-height: 380px;
+    margin-top: 20px;
+}
+    .tab.active{
+        display: block;
+    }
+    .tab img{
+        width: 100%;
+        height:auto;
+    }
+/*karta end start*/
 
 @-moz-document url-prefix() {
     .places-block.edited-block .value-field {

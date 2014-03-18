@@ -75,7 +75,7 @@ $(function() {
         location.href = $(this).data('url');
     });
 
-    $('.searchResultOtherFilterCheck').on('click', $('.searchResultOtherFilterCheck'), function(e){
+    $(document).on('click', ('.searchResultOtherFilterCheck'), function(e){
         var checkbox = $(this).find('input[type="checkbox"]');
         if(checkbox.attr("checked") == 'checked'){
             $(this).removeClass('active');
@@ -88,6 +88,16 @@ $(function() {
     });
 
     $(".searchResultItemSlides").slidesjs({
+        width: 334,
+        height: 228,
+        pagination: {
+            active: false
+        }
+    });
+
+    $('.kartaLeft-a .searchResultItemSlides').slidesjs({
+        width: 334,
+        height: 228,
         pagination: {
             active: false
         }
@@ -130,65 +140,115 @@ $(function() {
         $(this).parents('.searchMapSelect').removeClass('active');
     });
 
+    $('.kartaAddBtn').on('click', function(){
+
+        $('.places-list').prepend($('<li />').text($(this).data('title')).append($('<span />').addClass('remove-button'))
+            .append($('<div />').addClass('checkboxEmulate active pointer').append($('<input />').attr('type', 'checkbox')
+                .attr('checked', true))));
+
+        return false;
+
+    });
+
+    $(document).on('click', '.checkboxEmulate', function(){
+        var checkbox = $(this).find('input[type="checkbox"]');
+        if(checkbox.length){
+            if(checkbox.attr('checked') == 'checked'){
+                $(this).removeClass('active');
+                checkbox.removeAttr('checked');
+            }else{
+                $(this).addClass('active');
+                checkbox.attr('checked', true);
+            }
+        }
+    });
+
+    $(document).on('click', '.remove-button', function(){$(this).parents('li').remove()});
+
+
+    var offsetTop = $('.fluidBlock').offset().top;
+    $(document).scroll(function(){
+            var scroll = $(document).scrollTop();
+            if(scroll >= (offsetTop )){
+                $('.fluidBlock').css("top" ,scroll - offsetTop + 10);
+            }else{
+                $('.fluidBlock').css("top", 0);
+            }
+    });
+
+    $('a[data-role="tab"]').click(function(){
+        var tabId = $(this).attr('href');
+        $(this).parents('ul').find('li').removeClass('current');
+        $(this).parents('li').addClass('current');
+        $('.tab').removeClass('active');
+        $(tabId).addClass('active');
+
+        offsetTop = $('.fluidBlock').offset().top;
+        return false;
+    });
+
+    //load animation
+    /*if($("#loaderImage").length){
+        var cSpeed=9;
+        var cWidth=50;
+        var cHeight=50;
+        var cTotalFrames=12;
+        var cFrameWidth=50;
+        var cImageSrc='http://test.htmlcenter.by/hoselmap/img/sprites.png';
+        var cImageTimeout=false;
+        var cIndex=0;
+        var cXpos=0;
+        var cPreloaderTimeout=false;
+        var SECONDS_BETWEEN_FRAMES=0;
+
+        function startAnimation(){
+
+            document.getElementById('loaderImage').style.backgroundImage='url('+cImageSrc+')';
+            document.getElementById('loaderImage').style.width=cWidth+'px';
+            document.getElementById('loaderImage').style.height=cHeight+'px';
+
+            FPS = Math.round(100/cSpeed);
+            SECONDS_BETWEEN_FRAMES = 1 / FPS;
+
+            cPreloaderTimeout=setTimeout(continueAnimation(), SECONDS_BETWEEN_FRAMES/1000);
+
+        }
+
+        function continueAnimation(){
+
+            cXpos += cFrameWidth;
+            cIndex += 1;
+
+            if (cIndex >= cTotalFrames) {
+                cXpos =0;
+                cIndex=0;
+            }
+
+            if(document.getElementById('loaderImage'))
+                document.getElementById('loaderImage').style.backgroundPosition=(-cXpos)+'px 0';
+
+            cPreloaderTimeout=setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES*1000);
+        }
+
+        function stopAnimation(){
+            clearTimeout(cPreloaderTimeout);
+            cPreloaderTimeout=false;
+        }
+
+        function imageLoader(s, fun)
+        {
+            clearTimeout(cImageTimeout);
+            cImageTimeout=0;
+            genImage = new Image();
+            genImage.onload=function (){cImageTimeout=setTimeout(fun, 0)};
+            genImage.onerror=new Function('alert(\'Could not load the image\')');
+            genImage.src=s;
+        }
+
+        new imageLoader(cImageSrc, startAnimation());
+    }*/
+
+
 });
-
-//loader image
-/*var cSpeed=9;
-var cWidth=50;
-var cHeight=50;
-var cTotalFrames=12;
-var cFrameWidth=50;
-var cImageSrc='http://test.htmlcenter.by/hoselmap/img/sprites.png';
-var cImageTimeout=false;
-var cIndex=0;
-var cXpos=0;
-var cPreloaderTimeout=false;
-var SECONDS_BETWEEN_FRAMES=0;
-
-function startAnimation(){
-
-    document.getElementById('loaderImage').style.backgroundImage='url('+cImageSrc+')';
-    document.getElementById('loaderImage').style.width=cWidth+'px';
-    document.getElementById('loaderImage').style.height=cHeight+'px';
-
-    FPS = Math.round(100/cSpeed);
-    SECONDS_BETWEEN_FRAMES = 1 / FPS;
-
-    cPreloaderTimeout=setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES/1000);
-
-}
-
-function continueAnimation(){
-
-    cXpos += cFrameWidth;
-    cIndex += 1;
-
-    if (cIndex >= cTotalFrames) {
-        cXpos =0;
-        cIndex=0;
-    }
-
-    if(document.getElementById('loaderImage'))
-        document.getElementById('loaderImage').style.backgroundPosition=(-cXpos)+'px 0';
-
-    cPreloaderTimeout=setTimeout('continueAnimation()', SECONDS_BETWEEN_FRAMES*1000);
-}
-
-function stopAnimation(){
-    clearTimeout(cPreloaderTimeout);
-    cPreloaderTimeout=false;
-}
-
-function imageLoader(s, fun)
-{
-    clearTimeout(cImageTimeout);
-    cImageTimeout=0;
-    genImage = new Image();
-    genImage.onload=function (){cImageTimeout=setTimeout(fun, 0)};
-    genImage.onerror=new Function('alert(\'Could not load the image\')');
-    genImage.src=s;
-}
-
-new imageLoader(cImageSrc, 'startAnimation()');*/
 
 
