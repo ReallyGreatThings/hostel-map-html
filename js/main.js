@@ -195,6 +195,14 @@ $(function() {
         $('.popupWrapper').show();
         $('.popupContent').hide();
         $(element).show();
+        $(".popupSlides").slidesjs({
+            width: 334,
+            height: 228,
+            pagination: {
+                active: false
+            }
+        });
+        //$('.slidesjs-container').show();
         return false;
     });
 
