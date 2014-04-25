@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,cyrillic' rel='stylesheet'
+                type='text/css'>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+         <link rel="stylesheet" href="css/jquery-ui.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!--<script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+                                                                                                                            your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- header block begin -->
+        <header class="pageHeader">
+            <div class="pageHeaderWrapper clearfix">
+                <div class="logo">
+                    <a href="/"><img src="img/logo.png" alt="" width="132" height="27"></a>
+                </div>
+                <div class="headerClient">
+                    <a href="#" class="headerClientLogin">Войти</a>
+                </div>
+            </div>
+        </header>
+        <!-- header block end -->
+
+
+
+        <div class="main-page-bg">
+            <!-- content block begin -->
+            <div class="c-align content-wrap main-page-content-wrap">
+                <div class="main-block clearfix">
+                    <div class="search-data places-block">
+                        <h3 class="main-block-title">Данные для поиска</h3>
+                        <div class="main-block-cont">
+                            <form>
+                                <div class="drop-panel-wrap">
+                                    <input type="text" class="value-field select drop-panel-button change-data" data-classname="country" value="Страна"/>
+                                    <ul class="drop-panel select-list">
+                                        <li>Страна1</li>
+                                        <li>Страна5</li>
+                                        <li>Страна4</li>
+                                        <li>Страна3</li>
+                                        <li>Страна2</li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix">
+                                    <div class="fromdate">
+                                        <div class="searchResultDatepicker clearfix">
+                                            <div class="searchResultDatepickerWrapper">
+                                                <input type="text" id="dateMin">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="todate">
+                                        <div class="searchResultDatepicker clearfix">
+                                            <label>До</label>
+                                            <div class="searchResultDatepickerWrapper">
+                                                <input type="text" id="dateMax">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="searchResultSlider">
+                                    <label>Количество человек</label>
+                                    <input type="hidden" id="count">
+                                    <div id="slider-count"></div>
+                                </div>
+                                <button class="ordersBtn big-button" type="submit">Найти</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="main-slider">
+                        <h3 class="main-block-title">Лучшие предложения</h3>
+                        <div class="main-block-cont">
+                            <div class="tab active" id="description">
+                                <div id="myDiv" class="kartaGallery"></div>
+                                <ul id="playList1" style="display: none;">
+
+                                    <!-- category  -->
+                                    <ul data-cat="Category one">
+                                        <ul>
+                                            <li data-type="media" data-url="images/1.jpg"></li>
+                                            <li data-thumbnail-path="images/1.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/2.jpg"></li>
+                                            <li data-thumbnail-path="images/2.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/3.jpg"></li>
+                                            <li data-thumbnail-path="images/3.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="55" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/4.jpg"></li>
+                                            <li data-thumbnail-path="images/4.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/5.jpg"></li>
+                                            <li data-thumbnail-path="images/5.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/14.jpg"></li>
+                                            <li data-thumbnail-path="images/14.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/7.jpg"></li>
+                                            <li data-thumbnail-path="images/7.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/8.jpg"></li>
+                                            <li data-thumbnail-path="images/8.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="55" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/9.jpg"></li>
+                                            <li data-thumbnail-path="images/9.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/10.jpg"></li>
+                                            <li data-thumbnail-path="images/10.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+
+                                        <ul>
+                                            <li data-type="media" data-url="images/11.jpg"></li>
+                                            <li data-thumbnail-path="images/11.jpg"></li>
+                                            <li data-thumbnail-text="" data-thumbnail-text-title-offset="35" data-thumbnail-text-offset-top="10"
+                                                    data-thumbnail-text-offset-bottom="7"></li>
+                                        </ul>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="main-block travelers">
+                        <h3 class="main-block-title">Путешественникам</h3>
+                        <div class="main-block-cont">
+                            <div class="checkboxEmulate active">Удобная система</div>
+                            <div class="checkboxEmulate active">Гарантия бронирования</div>
+                            <div class="checkboxEmulate active">Удобный вывод стредств</div>
+                        </div>
+                    </div>
+                    <div class="main-block hostels">
+                        <h3 class="main-block-title">Хостелам</h3>
+                        <div class="main-block-cont">
+                            <div class="checkboxEmulate active">Удобная система</div>
+                            <div class="checkboxEmulate active">Гарантия бронирования</div>
+                            <div class="checkboxEmulate active">Удобный вывод стредств</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content block end -->
+
+            <!-- footer block begin -->
+            <footer class="site-footer-wrap main-page-footer-wrap clearfix">
+                <div class="col-a">
+                    <p>2013 <a href="#">HOSTELMAP.RU</a></p>
+                </div>
+                <div class="col-b">
+                    <ul class="footer-nav-menu clearfix">
+                        <li><a href="#">хостелам</a></li>
+                        <li><a href="#">о нас</a></li>
+                        <li><a href="#">контакты</a></li>
+                    </ul>
+                </div>
+            </footer>
+            <!-- footer block end -->
+        </div>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="js/jquery.slides.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/hostels_edit_actions.js"></script>
+        <script src="js/FWDRoyal3DCoverflow.js"></script>
+        <script type="text/javascript">
+            var coverflow;
+
+            FWDUtils.onReady(function () {
+                coverflow = new FWD3DCoverflow({
+
+                    //required settings
+                    coverflowHolderDivId: "myDiv",
+                    coverflowDataListDivId: "playList1",
+                    displayType: "responsive",
+                    autoScale: "yes",
+                    coverflowWidth: 1070,
+                    coverflowHeight: 380,
+                    skinPath: "img/minimal_clasic_skin/",
+
+                    //main settings
+                    backgroundColor: "transparent",
+                    backgroundImagePath: "",
+                    thumbnailsBackgroundImagePath: "",
+                    backgroundRepeat: "repeat-x",
+                    showDisplay2DAlways: "no",
+                    coverflowStartPosition: "center",
+                    numberOfThumbnailsToDisplayLeftAndRight: "2",
+                    slideshowDelay: 5000,
+                    autoplay: "yes",
+                    showPrevButton: "no",
+                    showNextButton: "no",
+                    showSlideshowButton: "no",
+                    disableNextAndPrevButtonsOnMobile: "no",
+                    controlsMaxWidth: 940,
+                    slideshowTimerColor: "#000000",
+                    showContextMenu: "no",
+                    addKeyboardSupport: "yes",
+
+                    //thumbnail settings
+                    //thumbnailWidth:401,
+                    thumbnailWidth: 370,
+                    // thumbnailHeight:267,
+                    thumbnailHeight: 270,
+                    thumbnailXOffset3D: 86,
+                    thumbnailXSpace3D: 78,
+                    thumbnailZOffset3D: 200,
+                    thumbnailZSpace3D: 93,
+                    thumbnailYAngle3D: 70,
+                    thumbnailXOffset2D: 20,
+                    thumbnailXSpace2D: 30,
+                    thumbnailBorderSize: 1,
+                    thumbnailBackgroundColor: "#FFFFFF",
+                    thumbnailBorderColor1: "#FFFFFF",
+                    thumbnailBorderColor2: "#FFFFFF",
+                    maxNumberOfThumbnailsOnMobile: 13,
+                    showThumbnailsHtmlContent: "no",
+                    enableHtmlContent: "no",
+                    textBackgroundColor: "#FFFFFF",
+                    textBackgroundOpacity: .7,
+                    showText: "no",
+                    showTextBackgroundImage: "no",
+                    showThumbnailBoxShadow: "yes",
+                    thumbnailBoxShadowCss: "0px 2px 2px #111111",
+
+                    //scrollbar settings
+                    showScrollbar: "no",
+                    disableScrollbarOnMobile: "yes",
+                    enableMouseWheelScroll: "yes",
+                    scrollbarHandlerWidth: 300,
+                    scrollbarTextColorNormal: "#000000",
+                    scrollbarTextColorSelected: "#FFFFFF",
+
+                    //lightbox settings
+                    addLightBoxKeyboardSupport: "yes",
+                    showLightBoxNextAndPrevButtons: "yes",
+                    showLightBoxZoomButton: "yes",
+                    showLightBoxInfoButton: "yes",
+                    showLighBoxSlideShowButton: "yes",
+                    showLightBoxInfoWindowByDefault: "no",
+                    slideShowAutoPlay: "no",
+                    lightBoxVideoAutoPlay: "no",
+                    lightBoxBackgroundColor: "#000000",
+                    lightBoxInfoWindowBackgroundColor: "#FFFFFF",
+                    lightBoxItemBorderColor1: "#FFFFFF",
+                    lightBoxItemBorderColor2: "#FFFFFF",
+                    lightBoxItemBackgroundColor: "#333333",
+                    lightBoxMainBackgroundOpacity: .8,
+                    lightBoxInfoWindowBackgroundOpacity: .9,
+                    lightBoxBorderSize: 1,
+                    lightBoxBorderRadius: 0,
+                    lightBoxSlideShowDelay: 4
+                });
+            });
+        </script>
+    </body>
+</html>
