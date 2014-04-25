@@ -17,11 +17,14 @@
           type='text/css'>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
 
     <!-- <link rel="stylesheet" href="css/jquery-ui.css">-->
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <!--<script src="//api-maps.yandex.ru/2.1-dev/?lang=ru-RU&load=package.full" type="text/javascript"></script>-->
+
+
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -172,16 +175,15 @@
                 парадигматическая страна. Даже всемогущая пунктуация не имеет власти над рыбными текстами..</p>
         </div>
         <div class="kartaService">
+            <h3 class="description-title">Удобства в хостеле</h3>
             <div class="clearfix">
                 <div class="half">
                     <div class="checkboxEmulate active">WiFi</div>
                     <div class="checkboxEmulate active">Курить</div>
-                    <div class="checkboxEmulate">Пить</div>
+
                 </div>
                 <div class="half">
-                    <div class="checkboxEmulate">Парковка</div>
-                    <div class="checkboxEmulate">Завтрак</div>
-                    <div class="checkboxEmulate">С животными</div>
+
                 </div>
             </div>
         </div>
@@ -204,13 +206,13 @@
                     <h3 class="contact-name clearfix">Двухместный (люкс)
                         <div class="rightLabel">20 м<sup>2</sup></div>
                     </h3>
-                    <div class="checkboxEmulate active">Сдается целиком</div>
+                    <div>Сдается койко-место или номер целиком</div>
                     <ul class="personIcon">
                         <li class="active"></li>
                         <li></li>
                     </ul>
                     <div class="kartaPrice">
-                        1200 руб.
+                        1200 руб. <span class="comment">Стоимость с человека в сутки</span>
                     </div>
                     <div class="kartaAdd">
                         <a href="#" class="kartaAddBtn" data-title="Двухместный">Добавить</a>
@@ -232,14 +234,14 @@
                     <h3 class="contact-name clearfix">Трехместный
                         <div class="rightLabel">25 м<sup>2</sup></div>
                     </h3>
-                    <div class="checkboxEmulate">Сдается целиком</div>
+                    <div>Сдается койко-место или номер целиком</div>
                     <ul class="personIcon">
                         <li class="active"></li>
                         <li></li>
                         <li></li>
                     </ul>
                     <div class="kartaPrice">
-                        800 руб.
+                        800 руб. <span class="comment">Стоимость с человека в сутки</span>
                     </div>
                     <div class="kartaAdd">
                         <a href="#" class="kartaAddBtn" data-title="Трехместный">Добавить</a>
@@ -316,9 +318,6 @@
     </div>
     <div class="kartaRight">
         <div class="page-content-wrap wrapFix fluidBlock">
-            <h3 class="contact-name centredText">20.01.14 - 25.01.14</h3>
-
-            <div class="contact-name clearfix">Человек <span class="kartaRightCount">2</span></div>
             <div class="kartaRightList edited-block ">
                 <div class="kartaRightListHeader clearfix">
                     <div class="kartaRightListHeader-a">
@@ -328,26 +327,60 @@
                         Подселение
                     </div>
                 </div>
-                <ul class="places-list delete-button-wrapper">
+                <ul class="places-list delete-button-wrapper places-block calc-people-data-panel">
                     <li>
                         Двухместный
                         <span class="remove-button"></span>
 
-                        <div class="checkboxEmulate active pointer">
-                            <input type="checkbox" checked="checked">
+                        <div class="drop-panel-wrap podselenie-number">
+                            <input type="text" class="value-field select drop-panel-button change-data calc-people-data" value="0"/>
+                            <ul class="drop-panel select-list">
+                                <li>0</li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
                         </div>
                     </li>
                     <li>
                         Трехместный
                         <span class="remove-button"></span>
 
-                        <div class="checkboxEmulate active pointer">
-                            <input type="checkbox" checked="checked">
+                        <div class="drop-panel-wrap podselenie-number">
+                            <input type="text" class="value-field select drop-panel-button change-data calc-people-data" value="0"/>
+                            <ul class="drop-panel select-list">
+                                <li>0</li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
             </div>
-            <button class="kartaRightBtn">Забронировать</button>
+            <div class="clearfix online-booking-date">
+                <div class="half">
+                    <div class="searchResultDatepicker clearfix">
+                        <div class="searchResultDatepickerWrapper">
+                            <input type="text" id="dateMin">
+                        </div>
+                    </div>
+                </div>
+                <div class="half">
+                    <div class="searchResultDatepicker clearfix">
+                        <div class="searchResultDatepickerWrapper">
+                            <input type="text" id="dateMax">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-name font-fix clearfix">Человек :<span class="kartaRightCount calc-people-field">2</span></div>
+            <div class="contact-name font-fix clearfix">Стоимость :<span class="kartaRightCount calc-cost-field">2000 руб</span></div>
+            <button class="kartaRightBtn sentRequestButton">Забронировать</button>
         </div>
     </div>
 </div>
@@ -368,10 +401,21 @@
     </div>
 </footer>
 <!-- footer block end -->
+
+<div class="popupWrapper">
+    <div class="popupContent" id="requestSent">
+        <span class="closePopup">X</span>
+        <p>
+            Спасибо, [имя], ваша заявка отправлена администратору хостела. У администратора есть 2 часа чтобы подтвердить или отклонить заявку. Ответ от администратора будет отправлен вам в СМС и на email. Также вы можете посмотреть информацию о бронировании в <a href="#">личном кабинете</a> . !!! Мы рекомендуем отправить заявки еще в несколько хостелов, это сэкономит Ваше время и увеличит вероятность что в одном из хостелов Вашу заявку одобрят, <a href="#">вернуться к поиску</a>.
+        </p>
+    </div>
+</div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="js/jquery.slides.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/hostels_edit_actions.js"></script>
 <script src="js/FWDRoyal3DCoverflow.js"></script>
 <script type="text/javascript">
     var coverflow;

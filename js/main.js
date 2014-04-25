@@ -141,11 +141,9 @@ $(function() {
     });
 
     $('.kartaAddBtn').on('click', function(){
-
-        $('.places-list').prepend($('<li />').text($(this).data('title')).append($('<span />').addClass('remove-button'))
-            .append($('<div />').addClass('checkboxEmulate active pointer').append($('<input />').attr('type', 'checkbox')
-                .attr('checked', true))));
-
+        var select = $('<div />').addClass('drop-panel-wrap podselenie-number').append($('<input />').attr('type', 'text').addClass('value-field select drop-panel-button change-data calc-people-data').val(0));
+        var drop = select.append($('<ul />').addClass('drop-panel select-list').append('<li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li>'));
+        $('.places-list').prepend($('<li />').text($(this).data('title')).append($('<span />').addClass('remove-button')).append(drop));
         return false;
 
     });
@@ -230,6 +228,36 @@ $(function() {
             }
         }
     });
+
+    $(document).ready(function(){
+        function peopleSum() {
+            var val, i = 0;
+            var sum = parseInt(0);
+            $('.calc-people-field').text(sum);
+            var numbers = $('.calc-people-data-panel .calc-people-data');
+            for (i = 0; i < numbers.length; i++) {
+                val = parseInt($(numbers[i]).val());
+                sum+= val;
+            }
+            $('.calc-people-field').text( sum );
+        };
+
+        peopleSum();
+
+        $(document).on('change', '.calc-people-data-panel .calc-people-data', function(){
+            peopleSum();
+        });
+
+        $(document).on('click', '.sentRequestButton', function(){
+            $("#requestSent, .popupWrapper").show();
+        });
+
+        $(document).on('click', '.closePopup', function(){
+            $(this).parents('.popupWrapper, .popupContent').hide();
+        });
+
+    });
+
     //load animation
     /*if($("#loaderImage").length){
         var cSpeed=9;

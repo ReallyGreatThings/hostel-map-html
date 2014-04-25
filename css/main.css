@@ -195,6 +195,7 @@ input[type="text"]{
     left:0;
     top:0;
     width: 100%;
+    min-width: 930px;
 }
 .searchMap {
     width: 40%;
@@ -744,7 +745,6 @@ a:hover {
     background: #5e93ba;
     margin-right: 17px;
     text-align: center;
-    width: 114px;
 }
 
 .tabs-navigation-menu li a {
@@ -752,7 +752,7 @@ a:hover {
     font-size: 16px;
     color: #fff;
     display: block;
-    padding: 5px 0 6px;
+    padding: 5px 10px 6px;
 }
 
 .tabs-navigation-menu .current,
@@ -791,6 +791,7 @@ a:hover {
     display: block;
     font-weight: 100;
     margin: 0;
+    color: #fff;
 }
 
 .block-title {
@@ -823,6 +824,11 @@ a:hover {
 
 .actions-links:hover {
     text-decoration: none;
+}
+
+
+.contact-name.font-fix {
+    font-size: 24px;
 }
 
 .contact-name {
@@ -1221,6 +1227,21 @@ input:focus {
     position: relative;
 }
 
+.drop-panel-wrap.podselenie-number .value-field {
+    width: 20px;
+}
+
+.drop-panel-wrap.podselenie-number {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.drop-panel-wrap.podselenie-number li {
+    padding: 4px 0;
+    text-align: center;
+}
+
 .drop-panel {
     display: none;
     position: absolute;
@@ -1584,7 +1605,7 @@ input:focus {
         }
         .personIcon {
             padding:0;
-            margin:0;
+            margin:5px 0 0;
             list-style: none;
         }
             .personIcon li {
@@ -1801,6 +1822,22 @@ input:focus {
             .popupTableItems td {
                 text-align: center;
             }
+
+.closePopup {
+    display: block;
+    position: absolute;
+    right: -16px;
+    top: -19px;
+    padding: 5px 12px;
+    content: 'X';
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    background: #4884b0;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 100000;
+}
 .popupOrdersActions {
     text-align: center;
     margin: 10px 0;
@@ -1951,6 +1988,35 @@ input:focus {
     margin-bottom: 20px;
 }
 /*user profile end*/
+
+.online-booking-date .searchResultDatepickerWrapper {
+    margin: 0;
+}
+
+.online-booking-date .searchResultDatepickerWrapper input[type="text"] {
+    font-size: 18px;
+}
+
+.online-booking-date {
+    margin-bottom: 15px;
+}
+
+.online-booking-date .searchResultDatepicker {
+    margin-top: 0;
+}
+
+.kartaPrice .comment {
+    font-size: 14px;
+    display: block;
+}
+
+.add-room-btn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
 
 @-moz-document url-prefix() {
     .places-block.edited-block .value-field {
