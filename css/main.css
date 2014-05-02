@@ -2146,6 +2146,13 @@ input:focus {
     float: right;
     padding-top: 20px;  padding-bottom: 40px;  margin-bottom: 0;
 }
+
+.loadBlock {
+    background: url("../img/loader.gif") no-repeat;
+    width: 48px;
+    height: 48px;
+}
+
 @-moz-document url-prefix() {
     .places-block.edited-block .value-field {
         padding-left: 9px;
@@ -2163,12 +2170,6 @@ html {
     line-height: normal;
 }
 
-@media (max-width: 1190px) {
-    .c-align {
-        width: 98%;
-    }
-}
-
 @media (max-width: 959px) {
     .c-align {
         width: 926px;
@@ -2176,6 +2177,33 @@ html {
 }
 
 @media (max-width:  1190px) {
+    .c-align {
+        width: 98%;
+    }
+    .search-data {
+        padding: 0;
+    }
+    .ordersBtn.big-button {
+        display: block;
+    }
+    .search-data .drop-panel-wrap .value-field {
+        width: 100%;
+    }
+    .search-data,
+    .ordersBtn.big-button,
+    .main-slider,
+    .hostels,
+    .travelers {
+        float: none;
+        margin: 0 auto;
+    }
+    .hostels {
+        width: 570px;
+        margin-top: 15px;
+    }
+    .main-slider {
+        margin-top: 15px;
+    }
     .places-block .col-a,
     .places-block .col-b,
     .places-block .col-c {
